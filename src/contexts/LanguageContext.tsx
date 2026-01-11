@@ -23,8 +23,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Рассчитать стоимость бесплатно',
     'hero.stat1': 'Сделанных вывесок',
     'hero.stat2': 'Производство',
-    'hero.stat3': 'Регионов Узбекистана',
-    'hero.stat4': 'Наших клиентов',
+    'hero.stat3': 'Работаем по всему Узбекистану',
+    'hero.stat4': 'Довольных клиентов',
     
     // Pain
     'pain.title': 'Почему 70% вывесок не приносят клиентов?',
@@ -114,8 +114,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Bepul narxni hisoblash',
     'hero.stat1': 'Tayyorlangan belgilar',
     'hero.stat2': 'Ishlab chiqarish',
-    'hero.stat3': 'O\'zbekiston mintaqalari',
-    'hero.stat4': 'Bizning mijozlar',
+    'hero.stat3': 'Butun O\'zbekiston bo\'ylab ishlaymiz',
+    'hero.stat4': 'Mamnun mijozlar',
     
     // Pain
     'pain.title': 'Nega 70% belgilar mijozlarni jalb qilmaydi?',
