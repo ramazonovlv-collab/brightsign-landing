@@ -21,9 +21,10 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.titleHighlight': 'с помощью вывесок, которые работают 24/7',
     'hero.subtitle': 'Полный цикл производства наружной рекламы в Ташкенте: от дизайна до монтажа за 3–7 дней',
     'hero.cta': 'Рассчитать стоимость бесплатно',
-    'hero.benefit1': 'Своё производство',
-    'hero.benefit2': 'Монтаж за 1 день',
-    'hero.benefit3': 'Договор и документы',
+    'hero.stat1': 'Сделанных вывесок',
+    'hero.stat2': 'Производство',
+    'hero.stat3': 'Регионов Узбекистана',
+    'hero.stat4': 'Наших клиентов',
     
     // Pain
     'pain.title': 'Почему 70% вывесок не приносят клиентов?',
@@ -111,9 +112,10 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.titleHighlight': '24/7 ishlaydigan reklama tashqi belgilari bilan',
     'hero.subtitle': 'Toshkentda tashqi reklamani to\'liq ishlab chiqarish: dizayndan montajgacha 3-7 kun ichida',
     'hero.cta': 'Bepul narxni hisoblash',
-    'hero.benefit1': 'O\'z ishlab chiqarishimiz',
-    'hero.benefit2': '1 kunda montaj',
-    'hero.benefit3': 'Shartnoma va hujjatlar',
+    'hero.stat1': 'Tayyorlangan belgilar',
+    'hero.stat2': 'Ishlab chiqarish',
+    'hero.stat3': 'O\'zbekiston mintaqalari',
+    'hero.stat4': 'Bizning mijozlar',
     
     // Pain
     'pain.title': 'Nega 70% belgilar mijozlarni jalb qilmaydi?',
