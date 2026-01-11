@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Phone, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import kitLogo from '@/assets/kit-logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,14 +27,15 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">S</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-bold text-lg text-foreground">SignPro</span>
-              <p className="text-xs text-muted-foreground hidden md:block max-w-[200px] leading-tight">
-                Производство наружной рекламы
+          <div className="flex items-center gap-3">
+            <img 
+              src={kitLogo} 
+              alt="KIT - Производство наружной рекламы" 
+              className="h-12 md:h-14 w-auto"
+            />
+            <div className="hidden md:block">
+              <p className="text-xs text-muted-foreground max-w-[180px] leading-tight">
+                Производство наружной рекламы в Ташкенте
               </p>
             </div>
           </div>
