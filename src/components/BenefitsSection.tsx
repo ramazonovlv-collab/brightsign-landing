@@ -1,4 +1,4 @@
-import { Shield, Zap, Target, Headphones } from 'lucide-react';
+import { Award, Clock, Gem, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const BenefitsSection = () => {
@@ -6,32 +6,32 @@ const BenefitsSection = () => {
 
   const benefits = [
     {
-      icon: Shield,
+      icon: Award,
       title: t('benefits.card1.title'),
       description: t('benefits.card1.desc'),
+      gradient: 'from-primary/20 to-blue-500/20',
+      iconColor: 'text-primary',
+    },
+    {
+      icon: Clock,
+      title: t('benefits.card2.title'),
+      description: t('benefits.card2.desc'),
       gradient: 'from-green-500/20 to-emerald-500/20',
       iconColor: 'text-green-500',
     },
     {
-      icon: Zap,
-      title: t('benefits.card2.title'),
-      description: t('benefits.card2.desc'),
-      gradient: 'from-yellow-500/20 to-amber-500/20',
-      iconColor: 'text-yellow-500',
-    },
-    {
-      icon: Target,
+      icon: Gem,
       title: t('benefits.card3.title'),
       description: t('benefits.card3.desc'),
-      gradient: 'from-blue-500/20 to-cyan-500/20',
-      iconColor: 'text-blue-500',
+      gradient: 'from-amber-500/20 to-yellow-500/20',
+      iconColor: 'text-amber-500',
     },
     {
-      icon: Headphones,
+      icon: Heart,
       title: t('benefits.card4.title'),
       description: t('benefits.card4.desc'),
-      gradient: 'from-purple-500/20 to-pink-500/20',
-      iconColor: 'text-purple-500',
+      gradient: 'from-accent/20 to-rose-500/20',
+      iconColor: 'text-accent',
     },
   ];
 

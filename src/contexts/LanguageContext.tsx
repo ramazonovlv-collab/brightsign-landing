@@ -49,14 +49,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Benefits
     'benefits.title': 'Почему выбирают нас',
-    'benefits.card1.title': '0 проблем с законом',
-    'benefits.card1.desc': 'Полное согласование с хокимиятом — работаем легально',
-    'benefits.card2.title': 'Экономия на свете',
-    'benefits.card2.desc': 'LED-модули потребляют на 70% меньше электричества',
-    'benefits.card3.title': 'Видно за 300 метров',
-    'benefits.card3.desc': 'Яркие вывески привлекают клиентов даже в пасмурную погоду',
-    'benefits.card4.title': 'Сервис 24/7',
-    'benefits.card4.desc': 'Оперативный ремонт в течение 24 часов по гарантии',
+    'benefits.card1.title': 'Опыт',
+    'benefits.card1.desc': 'Существуем на рынке с 2015 года',
+    'benefits.card2.title': 'Сроки',
+    'benefits.card2.desc': 'Не срываем сроки и делаем всё вовремя',
+    'benefits.card3.title': 'Качество',
+    'benefits.card3.desc': 'Используем высококачественные материалы',
+    'benefits.card4.title': 'Лояльность',
+    'benefits.card4.desc': 'Предлагаем лояльную цену, ниже рынка',
     
     // Portfolio
     'portfolio.title': 'Посмотрите на наши работы в Ташкенте',
@@ -140,14 +140,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Benefits
     'benefits.title': 'Nega bizni tanlashadi',
-    'benefits.card1.title': 'Qonun bilan 0 muammo',
-    'benefits.card1.desc': 'Hokimiyat bilan to\'liq kelishuv — qonuniy ishlaymiz',
-    'benefits.card2.title': 'Yorug\'likda tejash',
-    'benefits.card2.desc': 'LED-modullar 70% kam elektr energiyasini sarflaydi',
-    'benefits.card3.title': '300 metrdan ko\'rinadi',
-    'benefits.card3.desc': 'Yorqin belgilar bulutli ob-havoda ham mijozlarni jalb qiladi',
-    'benefits.card4.title': '24/7 xizmat',
-    'benefits.card4.desc': 'Kafolat bo\'yicha 24 soat ichida tezkor ta\'mirlash',
+    'benefits.card1.title': 'Tajriba',
+    'benefits.card1.desc': '2015 yildan beri bozorda ishlaymiz',
+    'benefits.card2.title': 'Muddatlar',
+    'benefits.card2.desc': 'Muddatlarni buzmay, hamma narsani o\'z vaqtida qilamiz',
+    'benefits.card3.title': 'Sifat',
+    'benefits.card3.desc': 'Yuqori sifatli materiallardan foydalanamiz',
+    'benefits.card4.title': 'Sodiqlik',
+    'benefits.card4.desc': 'Bozordan past, sodiq narx taklif qilamiz',
     
     // Portfolio
     'portfolio.title': 'Toshkentdagi ishlarimizni ko\'ring',
