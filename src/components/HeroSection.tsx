@@ -8,9 +8,9 @@ const HeroSection = () => {
 
   const stats = [
     { icon: Signpost, value: '11 372', label: t('hero.stat1') },
-    { icon: Factory, value: '335', suffix: 'М²', label: t('hero.stat2') },
-    { icon: MapPin, value: '10', label: t('hero.stat3') },
-    { icon: Users, value: '3 996', label: t('hero.stat4') },
+    { icon: Factory, value: '500', suffix: 'М²', label: t('hero.stat2') },
+    { icon: MapPin, value: '', label: t('hero.stat3'), isText: true },
+    { icon: Users, value: '5 000+', label: t('hero.stat4') },
   ];
 
   return (
@@ -60,11 +60,19 @@ const HeroSection = () => {
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <stat.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div className="text-2xl md:text-3xl font-bold text-foreground">
-                  {stat.value}
-                  {stat.suffix && <span className="text-lg align-super">{stat.suffix}</span>}
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                {stat.isText ? (
+                  <div className="text-sm md:text-base font-semibold text-foreground leading-tight">
+                    {stat.label}
+                  </div>
+                ) : (
+                  <>
+                    <div className="text-2xl md:text-3xl font-bold text-foreground">
+                      {stat.value}
+                      {stat.suffix && <span className="text-lg align-super">{stat.suffix}</span>}
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
