@@ -1,4 +1,4 @@
-import { Factory, Clock, FileCheck } from 'lucide-react';
+import { Factory, Clock, Signpost, MapPin, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import heroImage from '@/assets/hero-signage.jpg';
@@ -6,10 +6,11 @@ import heroImage from '@/assets/hero-signage.jpg';
 const HeroSection = () => {
   const { t } = useLanguage();
 
-  const benefits = [
-    { icon: Factory, text: t('hero.benefit1') },
-    { icon: Clock, text: t('hero.benefit2') },
-    { icon: FileCheck, text: t('hero.benefit3') },
+  const stats = [
+    { icon: Signpost, value: '11 372', label: t('hero.stat1') },
+    { icon: Factory, value: '335', suffix: 'М²', label: t('hero.stat2') },
+    { icon: MapPin, value: '10', label: t('hero.stat3') },
+    { icon: Users, value: '3 996', label: t('hero.stat4') },
   ];
 
   return (
@@ -49,17 +50,21 @@ const HeroSection = () => {
             {t('hero.cta')}
           </Button>
 
-          {/* Benefits */}
-          <div className="flex flex-wrap gap-4 md:gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            {benefits.map((benefit, index) => (
+          {/* Company Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-card/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-border"
+                className="bg-card/80 backdrop-blur-sm px-4 py-4 rounded-xl border border-border text-center"
               >
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <benefit.icon className="w-5 h-5 text-primary" />
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <stat.icon className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-sm font-medium text-foreground">{benefit.text}</span>
+                <div className="text-2xl md:text-3xl font-bold text-foreground">
+                  {stat.value}
+                  {stat.suffix && <span className="text-lg align-super">{stat.suffix}</span>}
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
