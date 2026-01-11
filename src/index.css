@@ -23,12 +23,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 50% 15%;
 
-    /* Primary - Deep navy blue from KIT logo */
-    --primary: 215 65% 25%;
+    /* Primary - Blue from KIT logo */
+    --primary: 210 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Lighter navy */
-    --secondary: 215 45% 35%;
+    /* Secondary - Lighter blue */
+    --secondary: 210 80% 60%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted */
