@@ -12,9 +12,9 @@ const translations: Record<Language, Record<string, string>> = {
   ru: {
     // Header
     'header.schedule': 'Пн-Сб: 9:00 - 18:00',
-    'header.address': 'г. Ташкент, ул. Навои 25',
+    'header.address': 'г. Ташкент, ул. Султанали Машхади 210',
     'header.callback': 'Заказать звонок',
-    'header.phone': '+998 90 123 45 67',
+    'header.phone': '+998 90 927 35 06',
     
     // Hero
     'hero.title': 'Привлекайте на 35% больше клиентов',
@@ -103,9 +103,9 @@ const translations: Record<Language, Record<string, string>> = {
   uz: {
     // Header
     'header.schedule': 'Du-Sha: 9:00 - 18:00',
-    'header.address': 'Toshkent sh., Navoiy ko\'chasi 25',
+    'header.address': 'Toshkent sh., Sultonali Mashxadi ko\'chasi 210',
     'header.callback': 'Qo\'ng\'iroq buyurtma qilish',
-    'header.phone': '+998 90 123 45 67',
+    'header.phone': '+998 90 927 35 06',
     
     // Hero
     'hero.title': '35% ko\'proq mijozlarni jalb qiling',
