@@ -3,7 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import SolutionSection from '@/components/SolutionSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import PortfolioSection from '@/components/PortfolioSection';
-import FAQSection from '@/components/FAQSection';
+import PartnersSection from '@/components/PartnersSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import MobileCallButton from '@/components/MobileCallButton';
@@ -25,7 +25,7 @@ const Index = () => {
         <SectionDivider />
         <PortfolioSection />
         <SectionDivider />
-        <FAQSection />
+        <PartnersSection />
         <SectionDivider />
         <CTASection />
       </main>

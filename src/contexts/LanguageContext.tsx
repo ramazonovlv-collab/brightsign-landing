@@ -67,16 +67,9 @@ const translations: Record<Language, Record<string, string>> = {
     'portfolio.after': 'После',
     'portfolio.days': 'дней',
     
-    // FAQ
-    'faq.title': 'Частые вопросы',
-    'faq.q1': 'Сколько стоит вывеска?',
-    'faq.a1': 'Стоимость зависит от размера, типа подсветки и сложности. Средний чек — от $200 до $2000. Точную цену рассчитаем после замера.',
-    'faq.q2': 'Как быстро вы изготовите вывеску?',
-    'faq.a2': 'Стандартный срок — 3-7 рабочих дней. Срочные заказы выполняем за 1-2 дня с доплатой 30%.',
-    'faq.q3': 'Вы помогаете с согласованием?',
-    'faq.a3': 'Да, мы полностью берём на себя согласование с хокимиятом. Это входит в стоимость работ.',
-    'faq.q4': 'Какая гарантия на вывеску?',
-    'faq.a4': 'Гарантия 3 года на светодиоды и конструкцию. Бесплатный ремонт в течение 24 часов при поломке.',
+    // Partners
+    'partners.title': 'Нам доверяют',
+    'partners.alt': 'Логотипы партнёров KIT',
     
     // CTA
     'cta.title': 'Получите расчёт стоимости',
@@ -158,16 +151,9 @@ const translations: Record<Language, Record<string, string>> = {
     'portfolio.after': 'Keyin',
     'portfolio.days': 'kun',
     
-    // FAQ
-    'faq.title': 'Ko\'p beriladigan savollar',
-    'faq.q1': 'Belgi qancha turadi?',
-    'faq.a1': 'Narx o\'lcham, yoritish turi va murakkablikka bog\'liq. O\'rtacha chek — $200 dan $2000 gacha. Aniq narxni o\'lchovdan keyin hisoblaymiz.',
-    'faq.q2': 'Belgini qanchalik tez tayyorlaysiz?',
-    'faq.a2': 'Standart muddat — 3-7 ish kuni. Shoshilinch buyurtmalarni 30% qo\'shimcha to\'lov bilan 1-2 kunda bajaramiz.',
-    'faq.q3': 'Kelishuvda yordam berasizmi?',
-    'faq.a3': 'Ha, biz hokimiyat bilan kelishuvni to\'liq o\'z zimmamizga olamiz. Bu ishlar narxiga kiradi.',
-    'faq.q4': 'Belgiga qanday kafolat?',
-    'faq.a4': 'LEDlar va konstruksiyaga 3 yil kafolat. Buzilganda 24 soat ichida bepul ta\'mirlash.',
+    // Partners
+    'partners.title': 'Bizga ishonishadi',
+    'partners.alt': 'KIT hamkorlar logotiplari',
     
     // CTA
     'cta.title': 'Narx hisobini oling',
