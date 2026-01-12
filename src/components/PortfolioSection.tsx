@@ -11,6 +11,8 @@ import portfolioUnomomentoAfter from '@/assets/portfolio-unomomento-after.jpg';
 import portfolioUnomomentoBefore from '@/assets/portfolio-unomomento-before.jpg';
 import portfolioDurableBefore from '@/assets/portfolio-durable-before.jpg';
 import portfolioDurableAfter from '@/assets/portfolio-durable-after.jpg';
+import portfolioBloomBefore from '@/assets/portfolio-bloom-before.jpg';
+import portfolioBloomAfter from '@/assets/portfolio-bloom-after.jpg';
 
 const PortfolioSection = () => {
   const { t } = useLanguage();
@@ -33,12 +35,11 @@ const PortfolioSection = () => {
       task: 'Выставочный стенд из металоконструкции',
     },
     {
-      beforeImage: portfolio2Before,
-      afterImage: portfolio2After,
-      title: 'Ресторан "Oasis"',
-      days: 7,
-      task: 'Неоновая вывеска и LED-подсветка фасада',
-      result: 'Узнаваемость бренда выросла в 2 раза',
+      beforeImage: portfolioBloomBefore,
+      afterImage: portfolioBloomAfter,
+      title: 'Сеть магазинов косметики "BLOOM"',
+      days: 20,
+      task: 'Стелажи для продукции',
     },
     {
       beforeImage: portfolio3Before,
