@@ -8,6 +8,7 @@ import portfolio2After from '@/assets/portfolio-2-after.jpg';
 import portfolio3Before from '@/assets/portfolio-3-before.jpg';
 import portfolio3After from '@/assets/portfolio-3-after.jpg';
 import portfolioUnomomentoAfter from '@/assets/portfolio-unomomento-after.jpg';
+import portfolioUnomomentoBefore from '@/assets/portfolio-unomomento-before.jpg';
 
 const PortfolioSection = () => {
   const { t } = useLanguage();
@@ -15,7 +16,7 @@ const PortfolioSection = () => {
 
   const projects = [
     {
-      beforeImage: portfolio1Before, // Placeholder - need before image
+      beforeImage: portfolioUnomomentoBefore,
       afterImage: portfolioUnomomentoAfter,
       title: 'Химчистка "UnoMomento"',
       days: 5,
