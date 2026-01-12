@@ -61,7 +61,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio
     'portfolio.title': 'Посмотрите на наши работы в Ташкенте',
     'portfolio.stat1': '500+ объектов',
-    'portfolio.stat2': '12 лет опыта',
+    'portfolio.stat2': '11 лет опыта',
     'portfolio.stat3': '3500 м² вывесок',
     'portfolio.before': 'До',
     'portfolio.after': 'После',
@@ -145,7 +145,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio
     'portfolio.title': 'Toshkentdagi ishlarimizni ko\'ring',
     'portfolio.stat1': '500+ obyekt',
-    'portfolio.stat2': '12 yil tajriba',
+    'portfolio.stat2': '11 yil tajriba',
     'portfolio.stat3': '3500 m² belgilar',
     'portfolio.before': 'Oldin',
     'portfolio.after': 'Keyin',
