@@ -7,12 +7,21 @@ import portfolio2Before from '@/assets/portfolio-2-before.jpg';
 import portfolio2After from '@/assets/portfolio-2-after.jpg';
 import portfolio3Before from '@/assets/portfolio-3-before.jpg';
 import portfolio3After from '@/assets/portfolio-3-after.jpg';
+import portfolioUnomomentoAfter from '@/assets/portfolio-unomomento-after.jpg';
 
 const PortfolioSection = () => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const projects = [
+    {
+      beforeImage: portfolio1Before, // Placeholder - need before image
+      afterImage: portfolioUnomomentoAfter,
+      title: 'Химчистка "UnoMomento"',
+      days: 5,
+      task: 'Оклейка оракалом',
+      result: 'Клиентов +40%',
+    },
     {
       beforeImage: portfolio1Before,
       afterImage: portfolio1After,
@@ -36,6 +45,14 @@ const PortfolioSection = () => {
       days: 4,
       task: 'Светодиодный крест и объёмные буквы',
       result: 'Видимость с 350 метров',
+    },
+    {
+      beforeImage: portfolio2Before,
+      afterImage: portfolio3After,
+      title: 'Торговый центр "Grand"',
+      days: 10,
+      task: 'Комплексное оформление фасада',
+      result: 'Посещаемость +60%',
     },
   ];
 
