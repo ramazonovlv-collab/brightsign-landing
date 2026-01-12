@@ -9,6 +9,8 @@ import portfolio3Before from '@/assets/portfolio-3-before.jpg';
 import portfolio3After from '@/assets/portfolio-3-after.jpg';
 import portfolioUnomomentoAfter from '@/assets/portfolio-unomomento-after.jpg';
 import portfolioUnomomentoBefore from '@/assets/portfolio-unomomento-before.jpg';
+import portfolioDurableBefore from '@/assets/portfolio-durable-before.jpg';
+import portfolioDurableAfter from '@/assets/portfolio-durable-after.jpg';
 
 const PortfolioSection = () => {
   const { t } = useLanguage();
@@ -24,12 +26,11 @@ const PortfolioSection = () => {
       result: 'Клиентов +40%',
     },
     {
-      beforeImage: portfolio1Before,
-      afterImage: portfolio1After,
-      title: 'Магазин "Электроника"',
-      days: 5,
-      task: 'Световая вывеска с объёмными буквами',
-      result: 'Поток клиентов +40%',
+      beforeImage: portfolioDurableBefore,
+      afterImage: portfolioDurableAfter,
+      title: 'Выставочный стенд "Durable Group"',
+      days: 20,
+      task: 'Выставочный стенд из металоконструкции',
     },
     {
       beforeImage: portfolio2Before,
@@ -48,12 +49,12 @@ const PortfolioSection = () => {
       result: 'Видимость с 350 метров',
     },
     {
-      beforeImage: portfolio2Before,
-      afterImage: portfolio3After,
-      title: 'Торговый центр "Grand"',
-      days: 10,
-      task: 'Комплексное оформление фасада',
-      result: 'Посещаемость +60%',
+      beforeImage: portfolio1Before,
+      afterImage: portfolio1After,
+      title: 'Магазин "Электроника"',
+      days: 5,
+      task: 'Световая вывеска с объёмными буквами',
+      result: 'Поток клиентов +40%',
     },
   ];
 
@@ -155,12 +156,14 @@ const PortfolioSection = () => {
                       {projects[currentIndex].task}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-foreground font-medium">
-                      {projects[currentIndex].result}
-                    </span>
-                  </div>
+                  {projects[currentIndex].result && (
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      <span className="text-foreground font-medium">
+                        {projects[currentIndex].result}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Dots */}
