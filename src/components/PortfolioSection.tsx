@@ -13,12 +13,24 @@ import portfolioDurableBefore from '@/assets/portfolio-durable-before.jpg';
 import portfolioDurableAfter from '@/assets/portfolio-durable-after.jpg';
 import portfolioBloomBefore from '@/assets/portfolio-bloom-before.jpg';
 import portfolioBloomAfter from '@/assets/portfolio-bloom-after.jpg';
+import portfolioEdison1 from '@/assets/portfolio-edison-1.jpg';
+import portfolioEdison2 from '@/assets/portfolio-edison-2.jpg';
+
+interface Project {
+  beforeImage?: string;
+  afterImage?: string;
+  images?: string[];
+  title: string;
+  days: number;
+  task: string;
+  result?: string;
+}
 
 const PortfolioSection = () => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const projects = [
+  const projects: Project[] = [
     {
       beforeImage: portfolioUnomomentoBefore,
       afterImage: portfolioUnomomentoAfter,
@@ -42,12 +54,11 @@ const PortfolioSection = () => {
       task: 'Стелажи для продукции',
     },
     {
-      beforeImage: portfolio3Before,
-      afterImage: portfolio3After,
-      title: 'Аптека "Здоровье"',
-      days: 4,
-      task: 'Светодиодный крест и объёмные буквы',
-      result: 'Видимость с 350 метров',
+      images: [portfolioEdison1, portfolioEdison2],
+      title: 'Супермаркет "EDISON"',
+      days: 10,
+      task: 'Световая вывеска + металоконструкция',
+      result: '40% поток клиентов + видимость',
     },
     {
       beforeImage: portfolio1Before,
@@ -110,33 +121,53 @@ const PortfolioSection = () => {
           {/* Slide Content */}
           <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-xl">
             <div className="grid md:grid-cols-2">
-              {/* Before/After Images */}
-              <div className="relative aspect-[4/3]">
-                {/* Before */}
-                <div className="absolute inset-0 w-1/2">
-                  <img
-                    src={projects[currentIndex].beforeImage}
-                    alt="До"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-4 left-4 bg-destructive/90 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {t('portfolio.before')}
+            {/* Images */}
+            <div className="relative aspect-[4/3]">
+              {projects[currentIndex].images ? (
+                /* Gallery mode - two images side by side */
+                <>
+                  <div className="absolute inset-0 w-1/2">
+                    <img
+                      src={projects[currentIndex].images[0]}
+                      alt={projects[currentIndex].title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </div>
-                {/* After */}
-                <div className="absolute inset-0 left-1/2 w-1/2">
-                  <img
-                    src={projects[currentIndex].afterImage}
-                    alt="После"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-4 right-4 bg-green-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {t('portfolio.after')}
+                  <div className="absolute inset-0 left-1/2 w-1/2">
+                    <img
+                      src={projects[currentIndex].images[1]}
+                      alt={projects[currentIndex].title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </div>
-                {/* Divider */}
-                <div className="absolute inset-y-0 left-1/2 w-1 bg-white shadow-lg -translate-x-1/2" />
-              </div>
+                </>
+              ) : (
+                /* Before/After mode */
+                <>
+                  <div className="absolute inset-0 w-1/2">
+                    <img
+                      src={projects[currentIndex].beforeImage}
+                      alt="До"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-4 left-4 bg-destructive/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {t('portfolio.before')}
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 left-1/2 w-1/2">
+                    <img
+                      src={projects[currentIndex].afterImage}
+                      alt="После"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-4 right-4 bg-green-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {t('portfolio.after')}
+                    </div>
+                  </div>
+                  <div className="absolute inset-y-0 left-1/2 w-1 bg-white shadow-lg -translate-x-1/2" />
+                </>
+              )}
+            </div>
 
               {/* Project Info */}
               <div className="p-6 md:p-8 flex flex-col justify-center">
