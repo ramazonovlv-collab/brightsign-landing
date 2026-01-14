@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Building, Calendar, CheckCircle } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import portfolio1Before from '@/assets/portfolio-1-before.jpg';
-import portfolio1After from '@/assets/portfolio-1-after.jpg';
-import portfolio2Before from '@/assets/portfolio-2-before.jpg';
-import portfolio2After from '@/assets/portfolio-2-after.jpg';
-import portfolio3Before from '@/assets/portfolio-3-before.jpg';
-import portfolio3After from '@/assets/portfolio-3-after.jpg';
-import portfolioUnomomentoAfter from '@/assets/portfolio-unomomento-after.jpg';
-import portfolioUnomomentoBefore from '@/assets/portfolio-unomomento-before.jpg';
-import portfolioDurableBefore from '@/assets/portfolio-durable-before.jpg';
-import portfolioDurableAfter from '@/assets/portfolio-durable-after.jpg';
-import portfolioBloomBefore from '@/assets/portfolio-bloom-before.jpg';
-import portfolioBloomAfter from '@/assets/portfolio-bloom-after.jpg';
-import portfolioEdison1 from '@/assets/portfolio-edison-1.jpg';
-import portfolioEdison2 from '@/assets/portfolio-edison-2.jpg';
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Building, Calendar, CheckCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import portfolio1Before from "@/assets/portfolio-1-before.jpg";
+import portfolio1After from "@/assets/portfolio-1-after.jpg";
+import portfolio2Before from "@/assets/portfolio-2-before.jpg";
+import portfolio2After from "@/assets/portfolio-2-after.jpg";
+import portfolio3Before from "@/assets/portfolio-3-before.jpg";
+import portfolio3After from "@/assets/portfolio-3-after.jpg";
+import portfolioUnomomentoAfter from "@/assets/portfolio-unomomento-after.jpg";
+import portfolioUnomomentoBefore from "@/assets/portfolio-unomomento-before.jpg";
+import portfolioDurableBefore from "@/assets/portfolio-durable-before.jpg";
+import portfolioDurableAfter from "@/assets/portfolio-durable-after.jpg";
+import portfolioBloomBefore from "@/assets/portfolio-bloom-before.jpg";
+import portfolioBloomAfter from "@/assets/portfolio-bloom-after.jpg";
+import portfolioEdison1 from "@/assets/portfolio-edison-1.jpg";
+import portfolioEdison2 from "@/assets/portfolio-edison-2.jpg";
 
 interface Project {
   beforeImage?: string;
@@ -36,44 +36,44 @@ const PortfolioSection = () => {
       afterImage: portfolioUnomomentoAfter,
       title: 'Химчистка "UnoMomento"',
       days: 5,
-      task: 'Оклейка оракалом',
-      result: 'Клиентов +40%',
+      task: "Оклейка оракалом",
+      result: "Клиентов +40%",
     },
     {
       beforeImage: portfolioDurableBefore,
       afterImage: portfolioDurableAfter,
       title: 'Выставочный стенд "Durable Group"',
       days: 20,
-      task: 'Выставочный стенд из металоконструкции',
+      task: "Выставочный стенд из металоконструкции",
     },
     {
       beforeImage: portfolioBloomBefore,
       afterImage: portfolioBloomAfter,
       title: 'Сеть магазинов косметики "BLOOM"',
       days: 20,
-      task: 'Стелажи для продукции',
+      task: "Стелажи для продукции",
     },
     {
       images: [portfolioEdison1, portfolioEdison2],
       title: 'Супермаркет "EDISON"',
       days: 10,
-      task: 'Световая вывеска + металоконструкция',
-      result: '40% поток клиентов + видимость',
+      task: "Световая вывеска + металоконструкция",
+      result: "40% поток клиентов + видимость",
     },
     {
       beforeImage: portfolio1Before,
       afterImage: portfolio1After,
       title: 'Магазин "Электроника"',
       days: 5,
-      task: 'Световая вывеска с объёмными буквами',
-      result: 'Поток клиентов +40%',
+      task: "Световая вывеска с объёмными буквами",
+      result: "Поток клиентов +40%",
     },
   ];
 
   const stats = [
-    { value: t('portfolio.stat1'), label: 'установлено' },
-    { value: t('portfolio.stat2'), label: 'на рынке' },
-    { value: t('portfolio.stat3'), label: 'изготовлено' },
+    { value: t("portfolio.stat1"), label: "установлено" },
+    { value: t("portfolio.stat2"), label: "на рынке" },
+    { value: t("portfolio.stat3"), label: "изготовлено" },
   ];
 
   const nextSlide = () => {
@@ -89,7 +89,7 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-6">
-          {t('portfolio.title')}
+          {t("portfolio.title")}
         </h2>
 
         {/* Stats */}
@@ -121,79 +121,65 @@ const PortfolioSection = () => {
           {/* Slide Content */}
           <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-xl">
             <div className="grid md:grid-cols-2">
-            {/* Images */}
-            <div className="relative aspect-[4/3]">
-              {projects[currentIndex].images ? (
-                /* Gallery mode - two images side by side */
-                <>
-                  <div className="absolute inset-0 w-1/2">
-                    <img
-                      src={projects[currentIndex].images[0]}
-                      alt={projects[currentIndex].title}
-                      className="w-full h-full object-cover object-right"
-                    />
-                  </div>
-                  <div className="absolute inset-0 left-1/2 w-1/2">
-                    <img
-                      src={projects[currentIndex].images[1]}
-                      alt={projects[currentIndex].title}
-                      className="w-full h-full object-cover object-left"
-                    />
-                  </div>
-                </>
-              ) : (
-                /* Before/After mode */
-                <>
-                  <div className="absolute inset-0 w-1/2">
-                    <img
-                      src={projects[currentIndex].beforeImage}
-                      alt="До"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-4 left-4 bg-destructive/90 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {t('portfolio.before')}
+              {/* Images */}
+              <div className="relative aspect-[4/3]">
+                {projects[currentIndex].images ? (
+                  /* Gallery mode - two images side by side */
+                  <>
+                    <div className="absolute inset-0 w-1/2">
+                      <img
+                        src={projects[currentIndex].images[0]}
+                        alt={projects[currentIndex].title}
+                        className="w-full h-full object-cover object-right"
+                      />
                     </div>
-                  </div>
-                  <div className="absolute inset-0 left-1/2 w-1/2">
-                    <img
-                      src={projects[currentIndex].afterImage}
-                      alt="После"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-4 right-4 bg-green-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {t('portfolio.after')}
+                    <div className="absolute inset-0 left-1/2 w-1/2">
+                      <img
+                        src={projects[currentIndex].images[1]}
+                        alt={projects[currentIndex].title}
+                        className="w-full h-full object-cover object-left"
+                      />
                     </div>
-                  </div>
-                  <div className="absolute inset-y-0 left-1/2 w-1 bg-white shadow-lg -translate-x-1/2" />
-                </>
-              )}
-            </div>
+                  </>
+                ) : (
+                  /* Before/After mode */
+                  <>
+                    <div className="absolute inset-0 w-1/2">
+                      <img src={projects[currentIndex].beforeImage} alt="До" className="w-full h-full object-cover" />
+                      <div className="absolute bottom-4 left-4 bg-destructive/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        {t("portfolio.before")}
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 left-1/2 w-1/2">
+                      <img src={projects[currentIndex].afterImage} alt="После" className="w-full h-full object-cover" />
+                      <div className="absolute bottom-4 right-4 bg-green-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        {t("portfolio.after")}
+                      </div>
+                    </div>
+                    <div className="absolute inset-y-0 left-1/2 w-1 bg-white shadow-lg -translate-x-1/2" />
+                  </>
+                )}
+              </div>
 
               {/* Project Info */}
               <div className="p-6 md:p-8 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  {projects[currentIndex].title}
-                </h3>
-                
+                <h3 className="text-2xl font-bold text-foreground mb-4">{projects[currentIndex].title}</h3>
+
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
                     <Calendar className="w-5 h-5 text-primary" />
                     <span className="text-muted-foreground">
-                      {projects[currentIndex].days} {t('portfolio.days')}
+                      {projects[currentIndex].days} {t("portfolio.days")}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Building className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">
-                      {projects[currentIndex].task}
-                    </span>
+                    <span className="text-muted-foreground">{projects[currentIndex].task}</span>
                   </div>
                   {projects[currentIndex].result && (
                     <div className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-foreground font-medium">
-                        {projects[currentIndex].result}
-                      </span>
+                      <span className="text-foreground font-medium">{projects[currentIndex].result}</span>
                     </div>
                   )}
                 </div>
@@ -205,7 +191,7 @@ const PortfolioSection = () => {
                       key={index}
                       onClick={() => setCurrentIndex(index)}
                       className={`w-3 h-3 rounded-full transition-colors ${
-                        index === currentIndex ? 'bg-primary' : 'bg-border hover:bg-muted-foreground/30'
+                        index === currentIndex ? "bg-primary" : "bg-border hover:bg-muted-foreground/30"
                       }`}
                     />
                   ))}
