@@ -130,14 +130,15 @@ const PortfolioSection = () => {
                       <img
                         src={projects[currentIndex].images[0]}
                         alt={projects[currentIndex].title}
-                        className="w-full h-full object-cover object-right"
+                        className="w-full h-full object-cover object-center"
                       />
                     </div>
                     <div className="absolute inset-0 left-1/2 w-1/2">
                       <img
                         src={projects[currentIndex].images[1]}
                         alt={projects[currentIndex].title}
-                        className="w-full h-full object-cover object-left"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: '30% center' }}
                       />
                     </div>
                   </>
