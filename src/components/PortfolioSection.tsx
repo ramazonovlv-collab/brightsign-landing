@@ -63,10 +63,10 @@ const PortfolioSection = () => {
     {
       beforeImage: portfolio1Before,
       afterImage: portfolio1After,
-      title: 'Магазин "Электроника"',
-      days: 5,
-      task: "Световая вывеска с объёмными буквами",
-      result: "Поток клиентов +40%",
+      title: 'Автосалон "Porsche"',
+      days: 2,
+      task: "Интерьерные картины",
+      result: "Атмосфера, имидж, статус",
     },
   ];
 
