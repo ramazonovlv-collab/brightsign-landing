@@ -61,6 +61,9 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
       </div>
+      
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl">
