@@ -80,7 +80,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.business.restaurant': 'Ресторан/Кафе',
     'cta.business.office': 'Офис/Компания',
     'cta.business.other': 'Другое',
-    'cta.submit': 'Получить расчёт и подарок',
+    'cta.submit': 'Получить расчёт',
     'cta.privacy': 'Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности',
     
     // Footer
@@ -91,7 +91,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.service3': 'Неоновые вывески',
     'footer.service4': 'LED-экраны',
     'footer.contacts': 'Контакты',
-    'footer.copyright': '© 2024 KIT. Все права защищены.',
+    'footer.copyright': '© 2026 KIT. Все права защищены.',
   },
   uz: {
     // Header
@@ -164,7 +164,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.business.restaurant': 'Restoran/Kafe',
     'cta.business.office': 'Ofis/Kompaniya',
     'cta.business.other': 'Boshqa',
-    'cta.submit': 'Hisob va sovg\'ani olish',
+    'cta.submit': 'Hisobni olish',
     'cta.privacy': 'Tugmani bosish orqali siz maxfiylik siyosatiga rozilik bildirasiz',
     
     // Footer
@@ -175,7 +175,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.service3': 'Neon belgilari',
     'footer.service4': 'LED-ekranlar',
     'footer.contacts': 'Kontaktlar',
-    'footer.copyright': '© 2024 KIT. Barcha huquqlar himoyalangan.',
+    'footer.copyright': '© 2026 KIT. Barcha huquqlar himoyalangan.',
   }
 };
 
