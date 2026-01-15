@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import kitLogo from '@/assets/kit-logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -10,15 +11,18 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Logo & Description */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">S</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src={kitLogo} 
+                alt="KIT - Производство наружной рекламы" 
+                className="h-12 w-auto"
+              />
+              <div>
+                <p className="text-xs text-background/70 max-w-[180px] leading-tight">
+                  {t('footer.desc')}
+                </p>
               </div>
-              <span className="font-bold text-xl text-background">SignPro</span>
             </div>
-            <p className="text-background/70 leading-relaxed">
-              {t('footer.desc')}
-            </p>
           </div>
 
           {/* Services */}
@@ -37,20 +41,20 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4 text-background">{t('footer.contacts')}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="tel:+998901234567" className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors">
+                <a href="tel:+998909273506" className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors">
                   <Phone className="w-5 h-5" />
-                  <span>+998 90 123 45 67</span>
+                  <span>{t('header.phone')}</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@signpro.uz" className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors">
+                <a href="mailto:info@kit.uz" className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors">
                   <Mail className="w-5 h-5" />
-                  <span>info@signpro.uz</span>
+                  <span>info@kit.uz</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 text-background/70">
                 <MapPin className="w-5 h-5" />
-                <span>г. Ташкент, ул. Навои 25</span>
+                <span>{t('header.address')}</span>
               </li>
             </ul>
           </div>
