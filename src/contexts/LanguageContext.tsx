@@ -91,7 +91,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.service3': 'Неоновые вывески',
     'footer.service4': 'LED-экраны',
     'footer.contacts': 'Контакты',
-    'footer.copyright': '© 2024 SignPro. Все права защищены.',
+    'footer.copyright': '© 2024 KIT. Все права защищены.',
   },
   uz: {
     // Header
@@ -175,7 +175,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.service3': 'Neon belgilari',
     'footer.service4': 'LED-ekranlar',
     'footer.contacts': 'Kontaktlar',
-    'footer.copyright': '© 2024 SignPro. Barcha huquqlar himoyalangan.',
+    'footer.copyright': '© 2024 KIT. Barcha huquqlar himoyalangan.',
   }
 };
 
