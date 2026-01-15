@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Gift, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -59,12 +59,6 @@ const CTASection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
-          {/* Bonus Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Gift className="w-5 h-5 text-primary-foreground" />
-            <span className="text-primary-foreground font-medium">{t('cta.bonus')}</span>
-          </div>
-
           {/* Title */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-10">
             {t('cta.title')}
