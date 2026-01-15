@@ -22,6 +22,7 @@ interface Project {
   beforeImage?: string;
   afterImage?: string;
   images?: string[];
+  imagePositions?: [string, string];
   title: string;
   days: number;
   task: string;
@@ -57,6 +58,7 @@ const PortfolioSection = () => {
     },
     {
       images: [portfolioEdison1, portfolioEdison2],
+      imagePositions: ['60% center', '30% center'],
       title: 'Супермаркет "EDISON"',
       days: 10,
       task: "Световая вывеска + металоконструкция",
@@ -64,6 +66,7 @@ const PortfolioSection = () => {
     },
     {
       images: [portfolioPorsche1, portfolioPorsche2],
+      imagePositions: ['20% center', '30% center'],
       title: 'Автосалон "Porsche"',
       days: 2,
       task: "Интерьерные картины",
@@ -132,7 +135,7 @@ const PortfolioSection = () => {
                         src={projects[currentIndex].images[0]}
                         alt={projects[currentIndex].title}
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: '60% center' }}
+                        style={{ objectPosition: projects[currentIndex].imagePositions?.[0] || 'center' }}
                       />
                     </div>
                     <div className="absolute inset-0 left-1/2 w-1/2">
@@ -140,7 +143,7 @@ const PortfolioSection = () => {
                         src={projects[currentIndex].images[1]}
                         alt={projects[currentIndex].title}
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: '30% center' }}
+                        style={{ objectPosition: projects[currentIndex].imagePositions?.[1] || 'center' }}
                       />
                     </div>
                   </>
