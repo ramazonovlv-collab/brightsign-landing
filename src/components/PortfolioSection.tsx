@@ -15,6 +15,8 @@ import portfolioBloomBefore from "@/assets/portfolio-bloom-before.jpg";
 import portfolioBloomAfter from "@/assets/portfolio-bloom-after.jpg";
 import portfolioEdison1 from "@/assets/portfolio-edison-1.jpg";
 import portfolioEdison2 from "@/assets/portfolio-edison-2.jpg";
+import portfolioPorsche1 from "@/assets/portfolio-porsche-1.jpg";
+import portfolioPorsche2 from "@/assets/portfolio-porsche-2.jpg";
 
 interface Project {
   beforeImage?: string;
@@ -61,8 +63,7 @@ const PortfolioSection = () => {
       result: "40% поток клиентов + видимость",
     },
     {
-      beforeImage: portfolio1Before,
-      afterImage: portfolio1After,
+      images: [portfolioPorsche1, portfolioPorsche2],
       title: 'Автосалон "Porsche"',
       days: 2,
       task: "Интерьерные картины",
