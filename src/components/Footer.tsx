@@ -33,6 +33,7 @@ const Footer = () => {
               <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service2')}</li>
               <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service3')}</li>
               <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service4')}</li>
+              <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service5')}</li>
             </ul>
           </div>
 
