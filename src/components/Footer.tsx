@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Send } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import kitLogo from '@/assets/kit-logo.png';
 
@@ -58,6 +58,25 @@ const Footer = () => {
                 <span>{t('header.address')}</span>
               </li>
             </ul>
+            {/* Social Media */}
+            <div className="flex gap-4 mt-6">
+              <a 
+                href="https://www.instagram.com/kit___studio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://t.me/kit_studio" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background transition-colors"
+              >
+                <Send className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
