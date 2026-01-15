@@ -8,9 +8,6 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import MobileCallButton from '@/components/MobileCallButton';
 
-const SectionDivider = () => (
-  <div className="h-24 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-);
 
 const Index = () => {
   return (
@@ -18,15 +15,10 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <SectionDivider />
         <SolutionSection />
-        <SectionDivider />
         <BenefitsSection />
-        <SectionDivider />
         <PortfolioSection />
-        <SectionDivider />
         <PartnersSection />
-        <SectionDivider />
         <CTASection />
       </main>
       <Footer />

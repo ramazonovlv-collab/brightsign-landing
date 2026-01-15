@@ -89,7 +89,7 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-background via-background to-muted/30">
       <div className="container mx-auto px-4">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-6">

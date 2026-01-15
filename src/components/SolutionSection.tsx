@@ -33,7 +33,7 @@ const SolutionSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="relative py-20 md:py-28 bg-gradient-to-b from-background via-background to-muted/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

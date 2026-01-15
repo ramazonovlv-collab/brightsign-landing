@@ -5,7 +5,7 @@ const PartnersSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-muted/30">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-muted/30 via-muted/30 to-primary/20">
       <div className="container mx-auto px-4">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">
