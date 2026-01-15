@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/select';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import ScrollAnimation from './ScrollAnimation';
 
 const CTASection = () => {
   const { t } = useLanguage();
@@ -58,11 +59,12 @@ const CTASection = () => {
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl mx-auto text-center">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-10">
-            {t('cta.title')}
-          </h2>
+        <ScrollAnimation>
+          <div className="max-w-2xl mx-auto text-center">
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-10">
+              {t('cta.title')}
+            </h2>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="bg-card rounded-3xl p-6 md:p-8 shadow-2xl">
@@ -113,7 +115,8 @@ const CTASection = () => {
               {t('cta.privacy')}
             </p>
           </form>
-        </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

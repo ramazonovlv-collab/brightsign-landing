@@ -1,5 +1,6 @@
 import { Award, Clock, Gem, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ScrollAnimation from './ScrollAnimation';
 
 const BenefitsSection = () => {
   const { t } = useLanguage();
@@ -39,30 +40,31 @@ const BenefitsSection = () => {
     <section className="py-20 md:py-28 bg-gradient-to-b from-muted/30 via-muted/30 to-background">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">
-          {t('benefits.title')}
-        </h2>
+        <ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">
+            {t('benefits.title')}
+          </h2>
+        </ScrollAnimation>
 
         {/* Benefits Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="group bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
-              {/* Icon with gradient background */}
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                <benefit.icon className={`w-7 h-7 ${benefit.iconColor}`} />
-              </div>
+            <ScrollAnimation key={index} delay={index * 0.1}>
+              <div className="group bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full">
+                {/* Icon with gradient background */}
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+                  <benefit.icon className={`w-7 h-7 ${benefit.iconColor}`} />
+                </div>
 
-              {/* Content */}
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                {benefit.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
+                {/* Content */}
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Ruler, Palette, Settings, Wrench, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import productionImage from '@/assets/production-workshop.jpg';
+import ScrollAnimation from './ScrollAnimation';
 
 const SolutionSection = () => {
   const { t } = useLanguage();
@@ -36,19 +37,21 @@ const SolutionSection = () => {
     <section className="relative py-20 md:py-28 bg-gradient-to-b from-background via-background to-muted/30">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            {t('solution.title')}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('solution.subtitle')}
-          </p>
-        </div>
+        <ScrollAnimation>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              {t('solution.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('solution.subtitle')}
+            </p>
+          </div>
+        </ScrollAnimation>
 
-        {/* Steps */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Steps */}
-          <div className="space-y-6">
+          <ScrollAnimation direction="left">
+            <div className="space-y-6">
             {steps.map((step, index) => (
               <div
                 key={index}
@@ -82,23 +85,26 @@ const SolutionSection = () => {
                 <ArrowRight className="w-5 h-5 text-muted-foreground/0 group-hover:text-primary transition-all mt-4 group-hover:translate-x-1" />
               </div>
             ))}
-          </div>
+            </div>
+          </ScrollAnimation>
 
           {/* Right - Image */}
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={productionImage}
-                alt="Производственный цех"
-                className="w-full h-full object-cover"
-              />
+          <ScrollAnimation direction="right" delay={0.2}>
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={productionImage}
+                  alt="Производственный цех"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-lg">
+                <p className="text-3xl font-bold">3-7</p>
+                <p className="text-sm opacity-90">дней на изготовление</p>
+              </div>
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-lg">
-              <p className="text-3xl font-bold">3-7</p>
-              <p className="text-sm opacity-90">дней на изготовление</p>
-            </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

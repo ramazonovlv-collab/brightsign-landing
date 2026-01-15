@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Building, Calendar, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ScrollAnimation from "./ScrollAnimation";
 import portfolio1Before from "@/assets/portfolio-1-before.jpg";
 import portfolio1After from "@/assets/portfolio-1-after.jpg";
 import portfolio2Before from "@/assets/portfolio-2-before.jpg";
@@ -92,23 +93,28 @@ const PortfolioSection = () => {
     <section className="py-20 md:py-28 bg-gradient-to-b from-background via-background to-muted/30">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-6">
-          {t("portfolio.title")}
-        </h2>
+        <ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-6">
+            {t("portfolio.title")}
+          </h2>
+        </ScrollAnimation>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</p>
-              <p className="text-muted-foreground text-sm">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        <ScrollAnimation delay={0.1}>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</p>
+                <p className="text-muted-foreground text-sm">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </ScrollAnimation>
 
         {/* Slider */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Navigation Buttons */}
+        <ScrollAnimation delay={0.2}>
+          <div className="relative max-w-5xl mx-auto">
+            {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors shadow-lg"
@@ -213,7 +219,8 @@ const PortfolioSection = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
