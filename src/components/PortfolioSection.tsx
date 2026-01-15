@@ -15,14 +15,15 @@ import portfolioBloomBefore from "@/assets/portfolio-bloom-before.jpg";
 import portfolioBloomAfter from "@/assets/portfolio-bloom-after.jpg";
 import portfolioEdison1 from "@/assets/portfolio-edison-1.jpg";
 import portfolioEdison2 from "@/assets/portfolio-edison-2.jpg";
-import portfolioPorsche1 from "@/assets/portfolio-porsche-1.jpg";
-import portfolioPorsche2 from "@/assets/portfolio-porsche-2.jpg";
+import portfolioPorsche from "@/assets/portfolio-porsche.jpg";
 
 interface Project {
   beforeImage?: string;
   afterImage?: string;
   images?: string[];
   imagePositions?: [string, string];
+  singleImage?: string;
+  singleImagePosition?: string;
   title: string;
   days: number;
   task: string;
@@ -65,8 +66,7 @@ const PortfolioSection = () => {
       result: "40% поток клиентов + видимость",
     },
     {
-      images: [portfolioPorsche1, portfolioPorsche2],
-      imagePositions: ['20% center', '30% center'],
+      singleImage: portfolioPorsche,
       title: 'Автосалон "Porsche"',
       days: 2,
       task: "Интерьерные картины",
@@ -127,7 +127,15 @@ const PortfolioSection = () => {
             <div className="grid md:grid-cols-2">
               {/* Images */}
               <div className="relative aspect-[4/3]">
-                {projects[currentIndex].images ? (
+                {projects[currentIndex].singleImage ? (
+                  /* Single image mode - full width */
+                  <img
+                    src={projects[currentIndex].singleImage}
+                    alt={projects[currentIndex].title}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: projects[currentIndex].singleImagePosition || 'center' }}
+                  />
+                ) : projects[currentIndex].images ? (
                   /* Gallery mode - two images side by side */
                   <>
                     <div className="absolute inset-0 w-1/2">
