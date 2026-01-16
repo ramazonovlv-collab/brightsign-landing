@@ -81,13 +81,9 @@ const translations: Record<Language, Record<string, string>> = {
     
     // CTA
     'cta.title': 'Получите расчёт стоимости',
-    'cta.bonus': '+ датчик освещённости в подарок',
+    'cta.name': 'Ваше имя',
     'cta.phone': 'Ваш телефон',
-    'cta.business': 'Тип бизнеса',
-    'cta.business.retail': 'Магазин',
-    'cta.business.restaurant': 'Ресторан/Кафе',
-    'cta.business.office': 'Офис/Компания',
-    'cta.business.other': 'Другое',
+    'cta.message': 'Ваш запрос',
     'cta.submit': 'Получить расчёт',
     'cta.privacy': 'Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности',
     
@@ -173,13 +169,9 @@ const translations: Record<Language, Record<string, string>> = {
     
     // CTA
     'cta.title': 'Narx hisobini oling',
-    'cta.bonus': '+ sovg\'a sifatida yorug\'lik sensori',
+    'cta.name': 'Ismingiz',
     'cta.phone': 'Telefon raqamingiz',
-    'cta.business': 'Biznes turi',
-    'cta.business.retail': 'Do\'kon',
-    'cta.business.restaurant': 'Restoran/Kafe',
-    'cta.business.office': 'Ofis/Kompaniya',
-    'cta.business.other': 'Boshqa',
+    'cta.message': 'Sizning so\'rovingiz',
     'cta.submit': 'Hisobni olish',
     'cta.privacy': 'Tugmani bosish orqali siz maxfiylik siyosatiga rozilik bildirasiz',
     
