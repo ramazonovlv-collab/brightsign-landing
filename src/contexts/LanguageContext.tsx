@@ -54,6 +54,7 @@ const translations: Record<Language, Record<string, string>> = {
     'solution.step3.desc': 'Изготовление на собственном оборудовании за 3-7 дней',
     'solution.step4.title': 'Монтаж и гарантия',
     'solution.step4.desc': 'Профессиональная установка с гарантией 1 год',
+    'solution.badge': 'дней на изготовление',
     
     // Benefits
     'benefits.title': 'Почему выбирают нас',
@@ -142,6 +143,7 @@ const translations: Record<Language, Record<string, string>> = {
     'solution.step3.desc': 'O\'z uskunalarimizda 3-7 kun ichida ishlab chiqarish',
     'solution.step4.title': 'Montaj va kafolat',
     'solution.step4.desc': '1 yil kafolatli professional o\'rnatish',
+    'solution.badge': 'kun ichida ishlab chiqarish',
     
     // Benefits
     'benefits.title': 'Nega bizni tanlashadi',
