@@ -37,12 +37,11 @@ const PortfolioSection = () => {
 
   const projects: Project[] = [
     {
-      beforeImage: portfolioUnomomentoBefore,
-      afterImage: portfolioUnomomentoAfter,
-      title: t('portfolio.project1.title'),
-      days: 5,
-      task: t('portfolio.project1.task'),
-      result: t('portfolio.project1.result'),
+      singleImage: portfolioPorsche,
+      title: t('portfolio.project5.title'),
+      days: 2,
+      task: t('portfolio.project5.task'),
+      result: t('portfolio.project5.result'),
     },
     {
       beforeImage: portfolioDurableBefore,
@@ -67,11 +66,12 @@ const PortfolioSection = () => {
       result: t('portfolio.project4.result'),
     },
     {
-      singleImage: portfolioPorsche,
-      title: t('portfolio.project5.title'),
-      days: 2,
-      task: t('portfolio.project5.task'),
-      result: t('portfolio.project5.result'),
+      beforeImage: portfolioUnomomentoBefore,
+      afterImage: portfolioUnomomentoAfter,
+      title: t('portfolio.project1.title'),
+      days: 5,
+      task: t('portfolio.project1.task'),
+      result: t('portfolio.project1.result'),
     },
   ];
 
