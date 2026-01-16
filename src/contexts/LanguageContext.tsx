@@ -18,6 +18,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contacts': 'Контакты',
     
     // Header
+    'header.tagline': 'Производство наружной рекламы в Ташкенте',
     'header.schedule': 'Пн-Сб: 9:00 - 18:00',
     'header.address': 'г. Ташкент, ул. Султанали Машхади 210',
     'header.callback': 'Заказать звонок',
@@ -109,6 +110,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.partners': 'Hamkorlarimiz',
     'nav.contacts': 'Kontaktlar',
     // Header
+    'header.tagline': 'Toshkentda tashqi reklama ishlab chiqarish',
     'header.schedule': 'Du-Sha: 9:00 - 18:00',
     'header.address': 'Toshkent sh., Sultonali Mashxadi ko\'chasi 210',
     'header.callback': 'Qo\'ng\'iroq buyurtma qilish',

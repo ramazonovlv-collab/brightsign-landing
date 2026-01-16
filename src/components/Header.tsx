@@ -42,13 +42,18 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div 
+            className="flex items-center gap-3 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <img 
               src={kitLogo} 
               alt="KIT - Производство наружной рекламы" 
-              className="h-10 md:h-12 w-auto cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="h-10 md:h-12 w-auto"
             />
+            <span className="hidden md:block text-sm font-medium text-foreground leading-tight max-w-[180px]">
+              {t('header.tagline')}
+            </span>
           </div>
 
           {/* Navigation - Desktop */}
