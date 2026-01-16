@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Phone, Clock, MapPin } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import kitLogo from '@/assets/kit-logo.png';
@@ -16,12 +16,26 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navItems = [
+    { label: t('nav.home'), action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+    { label: t('nav.about'), action: () => scrollToSection('benefits') },
+    { label: t('nav.portfolio'), action: () => scrollToSection('portfolio') },
+    { label: t('nav.partners'), action: () => scrollToSection('partners') },
+  ];
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-background/95 backdrop-blur-md shadow-md'
-          : 'bg-transparent'
+          : 'bg-background/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -31,26 +45,23 @@ const Header = () => {
             <img 
               src={kitLogo} 
               alt="KIT - Производство наружной рекламы" 
-              className="h-12 md:h-14 w-auto"
+              className="h-10 md:h-12 w-auto cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
-            <div className="hidden md:block">
-              <p className="text-xs text-muted-foreground max-w-[180px] leading-tight">
-                Производство наружной рекламы в Ташкенте
-              </p>
-            </div>
           </div>
 
-          {/* Center Info - Desktop */}
-          <div className="hidden lg:flex items-center gap-6">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Clock className="w-4 h-4 text-primary" />
-              <span>{t('header.schedule')}</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="w-4 h-4 text-primary" />
-              <span>{t('header.address')}</span>
-            </div>
-          </div>
+          {/* Navigation - Desktop */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={item.action}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
 
           {/* Right Side */}
           <div className="flex items-center gap-2 md:gap-4">
@@ -80,8 +91,8 @@ const Header = () => {
 
             {/* Phone */}
             <a
-              href="tel:+998901234567"
-              className="hidden md:flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors"
+              href="tel:+998909273506"
+              className="hidden lg:flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>{t('header.phone')}</span>
@@ -94,8 +105,8 @@ const Header = () => {
 
             {/* Mobile Phone Icon */}
             <a
-              href="tel:+998901234567"
-              className="md:hidden w-10 h-10 bg-primary rounded-full flex items-center justify-center"
+              href="tel:+998909273506"
+              className="lg:hidden w-10 h-10 bg-primary rounded-full flex items-center justify-center"
             >
               <Phone className="w-5 h-5 text-primary-foreground" />
             </a>

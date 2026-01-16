@@ -37,7 +37,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-muted/30 via-muted/30 to-background">
+    <section id="benefits" className="py-20 md:py-28 bg-gradient-to-b from-muted/30 via-muted/30 to-background">
       <div className="container mx-auto px-4">
         {/* Title */}
         <ScrollAnimation>
