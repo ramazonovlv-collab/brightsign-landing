@@ -8,12 +8,6 @@ const PartnersSection = () => {
   return (
     <section id="partners" className="py-20 md:py-28 bg-gradient-to-b from-muted/30 via-muted/30 to-primary/20">
       <div className="container mx-auto px-4">
-        {/* Title */}
-        <ScrollAnimation>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">
-            {t('partners.title')}
-          </h2>
-        </ScrollAnimation>
 
         {/* Partners Grid */}
         <ScrollAnimation delay={0.2}>
