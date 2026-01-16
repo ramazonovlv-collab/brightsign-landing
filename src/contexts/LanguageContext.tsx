@@ -10,6 +10,12 @@ interface LanguageContextType {
 
 const translations: Record<Language, Record<string, string>> = {
   ru: {
+    // Navigation
+    'nav.home': 'Главная',
+    'nav.about': 'О нас',
+    'nav.portfolio': 'Наши работы',
+    'nav.partners': 'Наши партнёры',
+    
     // Header
     'header.schedule': 'Пн-Сб: 9:00 - 18:00',
     'header.address': 'г. Ташкент, ул. Султанали Машхади 210',
@@ -95,6 +101,12 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.copyright': '© 2026 KIT. Все права защищены.',
   },
   uz: {
+    // Navigation
+    'nav.home': 'Bosh sahifa',
+    'nav.about': 'Biz haqimizda',
+    'nav.portfolio': 'Bizning ishlarimiz',
+    'nav.partners': 'Hamkorlarimiz',
+    
     // Header
     'header.schedule': 'Du-Sha: 9:00 - 18:00',
     'header.address': 'Toshkent sh., Sultonali Mashxadi ko\'chasi 210',
