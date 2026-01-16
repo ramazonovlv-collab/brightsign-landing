@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
+// Import backgrounds
+import sectionDarkBg from "@/assets/bg/section-dark.jpg";
+
 // Import gallery images
 import volumetricImg from "@/assets/gallery/volumetric-compositions.jpg";
 import exhibitionImg from "@/assets/gallery/exhibition-stands.jpg";
@@ -71,8 +74,14 @@ const ServicesGallery = () => {
   const activeService = categories.find((c) => c.id === activeCategory);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-muted/30 via-background to-background">
-      <div className="container mx-auto px-4">
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img src={sectionDarkBg} alt="" className="w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-background/80 to-background" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Title */}
         <ScrollAnimation>
           <div className="text-center mb-12">

@@ -1,6 +1,7 @@
 import { Award, Clock, Gem, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollAnimation from './ScrollAnimation';
+import sectionDarkBg from '@/assets/bg/section-dark.jpg';
 
 const BenefitsSection = () => {
   const { t } = useLanguage();
@@ -37,8 +38,14 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section id="benefits" className="py-20 md:py-28 bg-gradient-to-b from-muted/30 via-muted/30 to-background">
-      <div className="container mx-auto px-4">
+    <section id="benefits" className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img src={sectionDarkBg} alt="" className="w-full h-full object-cover opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/30 to-background" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Title */}
         <ScrollAnimation>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">

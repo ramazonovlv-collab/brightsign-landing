@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Building, Calendar, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
+import sectionLightBg from "@/assets/bg/section-light.jpg";
 import portfolio1Before from "@/assets/portfolio-1-before.jpg";
 import portfolio1After from "@/assets/portfolio-1-after.jpg";
 import portfolio2Before from "@/assets/portfolio-2-before.jpg";
@@ -90,8 +91,14 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 md:py-28 bg-gradient-to-b from-background via-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img src={sectionLightBg} alt="" className="w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/30" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Title */}
         <ScrollAnimation>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-6">

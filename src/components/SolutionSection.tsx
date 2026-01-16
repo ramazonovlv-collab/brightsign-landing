@@ -1,6 +1,7 @@
 import { Ruler, Palette, Settings, Wrench, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import productionImage from '@/assets/production-workshop.jpg';
+import sectionBg from '@/assets/bg/section-light.jpg';
 import ScrollAnimation from './ScrollAnimation';
 
 const SolutionSection = () => {
@@ -34,8 +35,14 @@ const SolutionSection = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-28 bg-gradient-to-b from-background via-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img src={sectionBg} alt="" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-muted/30" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <ScrollAnimation>
           <div className="text-center mb-16">
