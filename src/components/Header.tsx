@@ -28,6 +28,7 @@ const Header = () => {
     { label: t('nav.about'), action: () => scrollToSection('benefits') },
     { label: t('nav.portfolio'), action: () => scrollToSection('portfolio') },
     { label: t('nav.partners'), action: () => scrollToSection('partners') },
+    { label: t('nav.contacts'), action: () => scrollToSection('contacts') },
   ];
 
   return (
