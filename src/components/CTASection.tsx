@@ -1,14 +1,8 @@
 import { useState } from 'react';
-import { Phone, Loader2 } from 'lucide-react';
+import { Phone, User, MessageSquare, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
@@ -17,13 +11,18 @@ import ScrollAnimation from './ScrollAnimation';
 const CTASection = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [business, setBusiness] = useState('');
-  const [errors, setErrors] = useState<{ phone?: string; business?: string }>({});
+  const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
-    const newErrors: { phone?: string; business?: string } = {};
+    const newErrors: { name?: string; phone?: string } = {};
+    
+    if (!name.trim() || name.trim().length < 2) {
+      newErrors.name = 'Введите ваше имя';
+    }
     
     const phoneRegex = /^\+?[0-9]{9,15}$/;
     if (!phone.trim()) {
@@ -32,22 +31,8 @@ const CTASection = () => {
       newErrors.phone = 'Неверный формат телефона';
     }
     
-    if (!business) {
-      newErrors.business = 'Выберите тип бизнеса';
-    }
-    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
-
-  const getBusinessLabel = (value: string) => {
-    const labels: Record<string, string> = {
-      retail: 'Розничный магазин',
-      restaurant: 'Ресторан/Кафе',
-      office: 'Офис',
-      other: 'Другое',
-    };
-    return labels[value] || value;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,9 +45,9 @@ const CTASection = () => {
     try {
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
-          name: getBusinessLabel(business),
-          phone: phone,
-          message: `Тип бизнеса: ${getBusinessLabel(business)}`,
+          name: name.trim(),
+          phone: phone.trim(),
+          message: message.trim() || 'Не указано',
         },
       });
 
@@ -72,8 +57,9 @@ const CTASection = () => {
         title: 'Заявка отправлена!',
         description: 'Мы свяжемся с вами в ближайшее время.',
       });
+      setName('');
       setPhone('');
-      setBusiness('');
+      setMessage('');
       setErrors({});
     } catch (error) {
       console.error('Error sending form:', error);
@@ -103,7 +89,24 @@ const CTASection = () => {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="bg-card rounded-3xl p-6 md:p-8 shadow-2xl">
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              {/* Name Input */}
+              <div className="text-left">
+                <div className="relative">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder={t('cta.name')}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className={`pl-12 h-14 text-lg ${errors.name ? 'border-destructive' : ''}`}
+                  />
+                </div>
+                {errors.name && (
+                  <p className="text-destructive text-sm mt-1">{errors.name}</p>
+                )}
+              </div>
+
               {/* Phone Input */}
               <div className="text-left">
                 <div className="relative">
@@ -120,28 +123,27 @@ const CTASection = () => {
                   <p className="text-destructive text-sm mt-1">{errors.phone}</p>
                 )}
               </div>
+            </div>
 
-              {/* Business Type Select */}
-              <div className="text-left">
-                <Select value={business} onValueChange={setBusiness}>
-                  <SelectTrigger className={`h-14 text-lg ${errors.business ? 'border-destructive' : ''}`}>
-                    <SelectValue placeholder={t('cta.business')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-card border border-border">
-                    <SelectItem value="retail">{t('cta.business.retail')}</SelectItem>
-                    <SelectItem value="restaurant">{t('cta.business.restaurant')}</SelectItem>
-                    <SelectItem value="office">{t('cta.business.office')}</SelectItem>
-                    <SelectItem value="other">{t('cta.business.other')}</SelectItem>
-                  </SelectContent>
-                </Select>
-                {errors.business && (
-                  <p className="text-destructive text-sm mt-1">{errors.business}</p>
-                )}
+            {/* Message Input */}
+            <div className="text-left mb-6">
+              <div className="relative">
+                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-muted-foreground" />
+                <Textarea
+                  placeholder={t('cta.message')}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="pl-12 min-h-[100px] text-lg resize-none"
+                />
               </div>
             </div>
 
             {/* Submit Button */}
-            <Button type="submit" variant="cta" size="lg" className="w-full text-lg h-14 shadow-glow" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full h-14 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl"
+            >
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
@@ -152,12 +154,12 @@ const CTASection = () => {
               )}
             </Button>
 
-            {/* Privacy */}
+            {/* Privacy note */}
             <p className="text-muted-foreground text-sm mt-4">
               {t('cta.privacy')}
             </p>
           </form>
-          </div>
+        </div>
         </ScrollAnimation>
       </div>
     </section>
