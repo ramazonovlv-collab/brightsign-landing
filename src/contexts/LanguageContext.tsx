@@ -15,6 +15,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.about': 'О нас',
     'nav.portfolio': 'Наши работы',
     'nav.partners': 'Наши партнёры',
+    'nav.contacts': 'Контакты',
     
     // Header
     'header.schedule': 'Пн-Сб: 9:00 - 18:00',
@@ -106,7 +107,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.about': 'Biz haqimizda',
     'nav.portfolio': 'Bizning ishlarimiz',
     'nav.partners': 'Hamkorlarimiz',
-    
+    'nav.contacts': 'Kontaktlar',
     // Header
     'header.schedule': 'Du-Sha: 9:00 - 18:00',
     'header.address': 'Toshkent sh., Sultonali Mashxadi ko\'chasi 210',
