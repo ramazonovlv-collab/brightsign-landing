@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import ScrollAnimation from './ScrollAnimation';
+import ctaBg from '@/assets/bg/cta-bg.jpg';
 
 const CTASection = () => {
   const { t } = useLanguage();
@@ -74,7 +75,13 @@ const CTASection = () => {
   };
 
   return (
-    <section id="contacts" className="py-20 md:py-28 bg-gradient-to-br from-primary to-primary/80 relative overflow-hidden">
+    <section id="contacts" className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img src={ctaBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/70" />
+      </div>
+      
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />

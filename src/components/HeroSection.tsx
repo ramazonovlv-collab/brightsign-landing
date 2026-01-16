@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCountUp, formatNumber } from '@/hooks/useCountUp';
 import heroImage from '@/assets/hero-signage.jpg';
+import heroBg from '@/assets/bg/hero-bg.jpg';
 
 const AnimatedStat = ({ 
   icon: Icon, 
@@ -52,12 +53,22 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image */}
+      {/* Abstract Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroBg}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/60" />
+      </div>
+      
+      {/* Hero Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Современная световая вывеска"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
       </div>
