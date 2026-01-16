@@ -39,46 +39,46 @@ const PortfolioSection = () => {
     {
       beforeImage: portfolioUnomomentoBefore,
       afterImage: portfolioUnomomentoAfter,
-      title: 'Химчистка "UnoMomento"',
+      title: t('portfolio.project1.title'),
       days: 5,
-      task: "Оклейка оракалом",
-      result: "Клиентов +40%",
+      task: t('portfolio.project1.task'),
+      result: t('portfolio.project1.result'),
     },
     {
       beforeImage: portfolioDurableBefore,
       afterImage: portfolioDurableAfter,
-      title: 'Выставочный стенд "Durable Group"',
+      title: t('portfolio.project2.title'),
       days: 20,
-      task: "Выставочный стенд из металоконструкции",
+      task: t('portfolio.project2.task'),
     },
     {
       beforeImage: portfolioBloomBefore,
       afterImage: portfolioBloomAfter,
-      title: 'Сеть магазинов косметики "BLOOM"',
+      title: t('portfolio.project3.title'),
       days: 20,
-      task: "Стелажи для продукции",
+      task: t('portfolio.project3.task'),
     },
     {
       images: [portfolioEdison1, portfolioEdison2],
       imagePositions: ['60% center', '30% center'],
-      title: 'Супермаркет "EDISON"',
+      title: t('portfolio.project4.title'),
       days: 10,
-      task: "Световая вывеска + металоконструкция",
-      result: "40% поток клиентов + видимость",
+      task: t('portfolio.project4.task'),
+      result: t('portfolio.project4.result'),
     },
     {
       singleImage: portfolioPorsche,
-      title: 'Автосалон "Porsche"',
+      title: t('portfolio.project5.title'),
       days: 2,
-      task: "Интерьерные картины",
-      result: "Атмосфера, имидж, статус",
+      task: t('portfolio.project5.task'),
+      result: t('portfolio.project5.result'),
     },
   ];
 
   const stats = [
-    { value: t("portfolio.stat1"), label: "установлено" },
-    { value: t("portfolio.stat2"), label: "на рынке" },
-    { value: t("portfolio.stat3"), label: "изготовлено" },
+    { value: t("portfolio.stat1"), label: t("portfolio.stat1.label") },
+    { value: t("portfolio.stat2"), label: t("portfolio.stat2.label") },
+    { value: t("portfolio.stat3"), label: t("portfolio.stat3.label") },
   ];
 
   const nextSlide = () => {
