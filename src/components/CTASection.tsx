@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone } from 'lucide-react';
+import { Phone, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/select';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import ScrollAnimation from './ScrollAnimation';
 
 const CTASection = () => {
@@ -19,6 +20,7 @@ const CTASection = () => {
   const [phone, setPhone] = useState('');
   const [business, setBusiness] = useState('');
   const [errors, setErrors] = useState<{ phone?: string; business?: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
     const newErrors: { phone?: string; business?: string } = {};
@@ -38,10 +40,34 @@ const CTASection = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getBusinessLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      retail: 'Розничный магазин',
+      restaurant: 'Ресторан/Кафе',
+      office: 'Офис',
+      other: 'Другое',
+    };
+    return labels[value] || value;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (validateForm()) {
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-telegram', {
+        body: {
+          name: getBusinessLabel(business),
+          phone: phone,
+          message: `Тип бизнеса: ${getBusinessLabel(business)}`,
+        },
+      });
+
+      if (error) throw error;
+
       toast({
         title: 'Заявка отправлена!',
         description: 'Мы свяжемся с вами в ближайшее время.',
@@ -49,6 +75,15 @@ const CTASection = () => {
       setPhone('');
       setBusiness('');
       setErrors({});
+    } catch (error) {
+      console.error('Error sending form:', error);
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось отправить заявку. Попробуйте позже.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -106,8 +141,15 @@ const CTASection = () => {
             </div>
 
             {/* Submit Button */}
-            <Button type="submit" variant="cta" size="lg" className="w-full text-lg h-14 shadow-glow">
-              {t('cta.submit')}
+            <Button type="submit" variant="cta" size="lg" className="w-full text-lg h-14 shadow-glow" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Отправка...
+                </>
+              ) : (
+                t('cta.submit')
+              )}
             </Button>
 
             {/* Privacy */}
