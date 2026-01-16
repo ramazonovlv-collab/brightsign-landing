@@ -105,7 +105,12 @@ const Header = () => {
             </a>
 
             {/* CTA Button */}
-            <Button variant="cta" size="sm" className="hidden sm:inline-flex">
+            <Button 
+              variant="cta" 
+              size="sm" 
+              className="hidden sm:inline-flex"
+              onClick={() => scrollToSection('contacts')}
+            >
               {t('header.callback')}
             </Button>
 
