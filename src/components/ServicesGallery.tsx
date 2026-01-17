@@ -33,6 +33,16 @@ import volumetricBooks from "@/assets/gallery/volumetric-books.jpg";
 import volumetricPencils from "@/assets/gallery/volumetric-pencils.jpg";
 import volumetricBookDisplay from "@/assets/gallery/volumetric-book-display.jpg";
 
+// Import exhibition images
+import exhibitionDulon from "@/assets/gallery/exhibition-dulon.png";
+import exhibitionDafnaChristmas from "@/assets/gallery/exhibition-dafna-christmas.jpg";
+import exhibitionDafnaMain from "@/assets/gallery/exhibition-dafna-main.png";
+import exhibitionDafnaTowers from "@/assets/gallery/exhibition-dafna-towers.png";
+import exhibitionAlubest from "@/assets/gallery/exhibition-alubest.jpg";
+import exhibitionChangan from "@/assets/gallery/exhibition-changan.jpg";
+import exhibitionOmega from "@/assets/gallery/exhibition-omega.jpg";
+import exhibitionAlubestBooth from "@/assets/gallery/exhibition-alubest-booth.jpg";
+
 interface ServiceCategory {
   id: string;
   titleKey: string;
@@ -72,7 +82,14 @@ const ServicesGallery = () => {
       titleKey: "gallery.exhibition",
       image: exhibitionStandMain,
       works: [
-        { image: exhibitionStandMain, title: "Выставочный стенд премиум" },
+        { image: exhibitionDulon, title: "Выставочный стенд Dulon Group" },
+        { image: exhibitionDafnaChristmas, title: "Новогодняя инсталляция Dafna" },
+        { image: exhibitionDafnaMain, title: "Выставочный стенд Dafna" },
+        { image: exhibitionDafnaTowers, title: "Подвесные конструкции Dafna" },
+        { image: exhibitionAlubest, title: "Стенд Alubest x Modernism" },
+        { image: exhibitionChangan, title: "Автомобильный стенд Changan" },
+        { image: exhibitionOmega, title: "Выставочный стенд Омега" },
+        { image: exhibitionAlubestBooth, title: "Интерактивная будка Alubest" },
       ],
     },
     {
