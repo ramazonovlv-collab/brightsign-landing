@@ -22,8 +22,16 @@ import edison2 from "@/assets/portfolio-edison-2.jpg";
 import bloomAfter from "@/assets/portfolio-bloom-after.jpg";
 import durableAfter from "@/assets/portfolio-durable-after.jpg";
 import unomomentoAfter from "@/assets/portfolio-unomomento-after.jpg";
-import volumetricKfc from "@/assets/gallery/volumetric-kfc.jpg";
 import volumetricGrapes from "@/assets/gallery/volumetric-grapes.jpg";
+import volumetricTeapot from "@/assets/gallery/volumetric-teapot.jpg";
+import volumetricBird from "@/assets/gallery/volumetric-bird.jpg";
+import volumetricKfcBucket from "@/assets/gallery/volumetric-kfc-bucket.jpg";
+import volumetricPlants1 from "@/assets/gallery/volumetric-plants-1.jpg";
+import volumetricJungle from "@/assets/gallery/volumetric-jungle.jpg";
+import volumetricPlants2 from "@/assets/gallery/volumetric-plants-2.jpg";
+import volumetricBooks from "@/assets/gallery/volumetric-books.jpg";
+import volumetricPencils from "@/assets/gallery/volumetric-pencils.jpg";
+import volumetricBookDisplay from "@/assets/gallery/volumetric-book-display.jpg";
 
 interface ServiceCategory {
   id: string;
@@ -48,12 +56,15 @@ const ServicesGallery = () => {
       titleKey: "gallery.volumetric",
       image: volumetricGrapes,
       works: [
-        { image: volumetricGrapes, title: "Объёмная инсталляция виноград" },
-        { image: volumetricKfc, title: "Объёмная инсталляция KFC" },
-        { image: volumetricImg, title: "Объёмные буквы с подсветкой" },
-        { image: porsche1, title: "Брендирование Porsche" },
-        { image: porsche2, title: "Объёмные конструкции Porsche" },
-        { image: edison1, title: "Декоративные композиции" },
+        { image: volumetricTeapot, title: "Подвесная инсталляция чайник" },
+        { image: volumetricBird, title: "Объёмная скульптура птица" },
+        { image: volumetricKfcBucket, title: "Объёмная инсталляция KFC" },
+        { image: volumetricPlants1, title: "Подвесные островки с растениями" },
+        { image: volumetricJungle, title: "Декоративные джунгли в ТЦ" },
+        { image: volumetricPlants2, title: "Парящие деревья" },
+        { image: volumetricBooks, title: "Подвесная инсталляция книги" },
+        { image: volumetricPencils, title: "Объёмные карандаши" },
+        { image: volumetricBookDisplay, title: "Книжная выставочная композиция" },
       ],
     },
     {
