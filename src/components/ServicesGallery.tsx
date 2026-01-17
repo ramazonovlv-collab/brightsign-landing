@@ -10,7 +10,7 @@ import sectionDarkBg from "@/assets/bg/section-dark.jpg";
 // Import gallery images
 import volumetricImg from "@/assets/gallery/volumetric-compositions.jpg";
 import exhibitionStandMain from "@/assets/gallery/exhibition-stand-main.jpg";
-import interiorImg from "@/assets/gallery/interior-design.jpg";
+import interiorPorsche from "@/assets/gallery/interior-porsche.jpg";
 import lightBoxImg from "@/assets/gallery/light-boxes.jpg";
 import printingImg from "@/assets/gallery/large-format-printing.jpg";
 
@@ -95,12 +95,9 @@ const ServicesGallery = () => {
     {
       id: "interior",
       titleKey: "gallery.interior",
-      image: interiorImg,
+      image: interiorPorsche,
       works: [
-        { image: interiorImg, title: "Интерьерное оформление" },
-        { image: bloomAfter, title: "Оформление ресторана Bloom" },
-        { image: durableAfter, title: "Брендирование офиса" },
-        { image: unomomentoAfter, title: "Химчистка Unomomento" },
+        { image: interiorPorsche, title: "Интерьерное оформление" },
       ],
     },
     {
