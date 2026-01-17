@@ -9,7 +9,7 @@ import sectionDarkBg from "@/assets/bg/section-dark.jpg";
 
 // Import gallery images
 import volumetricImg from "@/assets/gallery/volumetric-compositions.jpg";
-import exhibitionImg from "@/assets/gallery/exhibition-stands.jpg";
+import exhibitionStandMain from "@/assets/gallery/exhibition-stand-main.jpg";
 import interiorImg from "@/assets/gallery/interior-design.jpg";
 import lightBoxImg from "@/assets/gallery/light-boxes.jpg";
 import printingImg from "@/assets/gallery/large-format-printing.jpg";
@@ -70,12 +70,9 @@ const ServicesGallery = () => {
     {
       id: "exhibition",
       titleKey: "gallery.exhibition",
-      image: exhibitionImg,
+      image: exhibitionStandMain,
       works: [
-        { image: exhibitionImg, title: "Выставочный стенд премиум" },
-        { image: edison1, title: "Стенд Edison" },
-        { image: edison2, title: "Оформление экспозиции" },
-        { image: porsche1, title: "Презентационная зона" },
+        { image: exhibitionStandMain, title: "Выставочный стенд премиум" },
       ],
     },
     {
