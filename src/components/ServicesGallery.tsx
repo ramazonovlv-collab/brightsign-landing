@@ -22,6 +22,7 @@ import edison2 from "@/assets/portfolio-edison-2.jpg";
 import bloomAfter from "@/assets/portfolio-bloom-after.jpg";
 import durableAfter from "@/assets/portfolio-durable-after.jpg";
 import unomomentoAfter from "@/assets/portfolio-unomomento-after.jpg";
+import volumetricKfc from "@/assets/gallery/volumetric-kfc.jpg";
 
 interface ServiceCategory {
   id: string;
@@ -47,6 +48,7 @@ const ServicesGallery = () => {
       image: volumetricImg,
       works: [
         { image: volumetricImg, title: "Объёмные буквы с подсветкой" },
+        { image: volumetricKfc, title: "Объёмная инсталляция KFC" },
         { image: porsche1, title: "Брендирование Porsche" },
         { image: porsche2, title: "Объёмные конструкции Porsche" },
         { image: edison1, title: "Декоративные композиции" },
