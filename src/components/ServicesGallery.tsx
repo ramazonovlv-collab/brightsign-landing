@@ -82,7 +82,7 @@ const ServicesGallery = () => {
       titleKey: "gallery.exhibition",
       image: exhibitionStandMain,
       works: [
-        { image: exhibitionDulon, title: "Выставочный стенд Dulon Group" },
+        { image: exhibitionDulon, title: "Выставочный стенд Durable Group" },
         { image: exhibitionDafnaChristmas, title: "Новогодняя инсталляция Dafna" },
         { image: exhibitionDafnaMain, title: "Выставочный стенд Dafna" },
         { image: exhibitionDafnaTowers, title: "Подвесные конструкции Dafna" },
