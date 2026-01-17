@@ -23,6 +23,7 @@ import bloomAfter from "@/assets/portfolio-bloom-after.jpg";
 import durableAfter from "@/assets/portfolio-durable-after.jpg";
 import unomomentoAfter from "@/assets/portfolio-unomomento-after.jpg";
 import volumetricKfc from "@/assets/gallery/volumetric-kfc.jpg";
+import volumetricGrapes from "@/assets/gallery/volumetric-grapes.jpg";
 
 interface ServiceCategory {
   id: string;
@@ -45,10 +46,11 @@ const ServicesGallery = () => {
     {
       id: "volumetric",
       titleKey: "gallery.volumetric",
-      image: volumetricImg,
+      image: volumetricGrapes,
       works: [
-        { image: volumetricImg, title: "Объёмные буквы с подсветкой" },
+        { image: volumetricGrapes, title: "Объёмная инсталляция виноград" },
         { image: volumetricKfc, title: "Объёмная инсталляция KFC" },
+        { image: volumetricImg, title: "Объёмные буквы с подсветкой" },
         { image: porsche1, title: "Брендирование Porsche" },
         { image: porsche2, title: "Объёмные конструкции Porsche" },
         { image: edison1, title: "Декоративные композиции" },
