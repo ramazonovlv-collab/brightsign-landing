@@ -271,42 +271,6 @@ const ServicesGallery = () => {
           </div>
         </ScrollAnimation>
 
-        {/* Works Grid Preview */}
-        <ScrollAnimation delay={0.3}>
-          <div className="mt-10">
-            <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
-              {t("gallery.worksInCategory")}
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {activeService?.works.map((work, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => activeService && openGallery(activeService.works, index)}
-                  className="relative group cursor-pointer overflow-hidden rounded-xl aspect-square"
-                >
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white text-sm font-medium text-center">
-                      {work.title}
-                    </p>
-                  </div>
-                  {/* Number badge */}
-                  <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {index + 1}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </ScrollAnimation>
 
         {/* Thumbnail Grid */}
         <ScrollAnimation delay={0.4}>
