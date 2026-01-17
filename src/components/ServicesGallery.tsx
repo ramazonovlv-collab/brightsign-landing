@@ -20,6 +20,15 @@ import interiorCheese from "@/assets/gallery/interior-cheese.jpg";
 import interiorStairway2 from "@/assets/gallery/interior-stairway-2.jpg";
 import interiorReception from "@/assets/gallery/interior-reception.jpg";
 import lightBoxImg from "@/assets/gallery/light-boxes.jpg";
+import lightboxEdison1 from "@/assets/gallery/lightbox-edison-1.jpg";
+import lightboxEdison2 from "@/assets/gallery/lightbox-edison-2.jpg";
+import lightboxGalmart2 from "@/assets/gallery/lightbox-galmart-2.jpg";
+import lightboxDafna from "@/assets/gallery/lightbox-dafna.jpg";
+import lightboxMessika from "@/assets/gallery/lightbox-messika.jpg";
+import lightboxBloom from "@/assets/gallery/lightbox-bloom.jpg";
+import lightboxLv from "@/assets/gallery/lightbox-lv.jpg";
+import lightboxKaganat from "@/assets/gallery/lightbox-kaganat.jpg";
+import lightboxLoccitane from "@/assets/gallery/lightbox-loccitane.jpg";
 import printingImg from "@/assets/gallery/large-format-printing.jpg";
 
 // Import portfolio images for gallery works
@@ -122,6 +131,15 @@ const ServicesGallery = () => {
       image: lightBoxImg,
       works: [
         { image: lightBoxImg, title: "Световые короба Galmart" },
+        { image: lightboxEdison1, title: "Световая вывеска Edison" },
+        { image: lightboxEdison2, title: "Edison - фасад" },
+        { image: lightboxGalmart2, title: "Galmart - колосья" },
+        { image: lightboxDafna, title: "DAFNA - мебельный салон" },
+        { image: lightboxMessika, title: "MESSIKA Paris" },
+        { image: lightboxBloom, title: "Bloom Beauty Shop" },
+        { image: lightboxLv, title: "Объёмные буквы LV" },
+        { image: lightboxKaganat, title: "KAGANAT" },
+        { image: lightboxLoccitane, title: "L'OCCITANE en Provence" },
       ],
     },
     {
