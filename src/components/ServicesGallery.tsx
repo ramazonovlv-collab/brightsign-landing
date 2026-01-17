@@ -121,10 +121,7 @@ const ServicesGallery = () => {
       titleKey: "gallery.lightbox",
       image: lightBoxImg,
       works: [
-        { image: lightBoxImg, title: "Световой короб премиум" },
-        { image: edison2, title: "Световая вывеска Edison" },
-        { image: porsche2, title: "Лайтбокс Porsche" },
-        { image: bloomAfter, title: "Неоновые вывески" },
+        { image: lightBoxImg, title: "Световые короба Galmart" },
       ],
     },
     {
