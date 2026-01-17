@@ -11,6 +11,14 @@ import sectionDarkBg from "@/assets/bg/section-dark.jpg";
 import volumetricImg from "@/assets/gallery/volumetric-compositions.jpg";
 import exhibitionStandMain from "@/assets/gallery/exhibition-stand-main.jpg";
 import interiorPorsche from "@/assets/gallery/interior-porsche.jpg";
+import interiorOffice1 from "@/assets/gallery/interior-office-1.jpg";
+import interiorNonBread from "@/assets/gallery/interior-non-bread.jpg";
+import interiorMeetingRoom from "@/assets/gallery/interior-meeting-room.jpg";
+import interiorBazar from "@/assets/gallery/interior-bazar.jpg";
+import interiorStairway from "@/assets/gallery/interior-stairway.jpg";
+import interiorCheese from "@/assets/gallery/interior-cheese.jpg";
+import interiorStairway2 from "@/assets/gallery/interior-stairway-2.jpg";
+import interiorReception from "@/assets/gallery/interior-reception.jpg";
 import lightBoxImg from "@/assets/gallery/light-boxes.jpg";
 import printingImg from "@/assets/gallery/large-format-printing.jpg";
 
@@ -95,8 +103,16 @@ const ServicesGallery = () => {
     {
       id: "interior",
       titleKey: "gallery.interior",
-      image: interiorPorsche,
+      image: interiorOffice1,
       works: [
+        { image: interiorOffice1, title: "Офис Porsche - кабинет" },
+        { image: interiorNonBread, title: "Пекарня NON Хлеб" },
+        { image: interiorMeetingRoom, title: "Офис Porsche - переговорная" },
+        { image: interiorBazar, title: "Sharqona Bozor - Восточный Базар" },
+        { image: interiorStairway, title: "Офис Porsche - лестница" },
+        { image: interiorCheese, title: "Galmart - сырный отдел" },
+        { image: interiorStairway2, title: "Офис Porsche - холл" },
+        { image: interiorReception, title: "Galmart - ресепшн" },
         { image: interiorPorsche, title: "Интерьерное оформление" },
       ],
     },
