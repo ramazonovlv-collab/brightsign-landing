@@ -170,9 +170,6 @@ const ServicesGallery = () => {
         { image: largeformatAirastana, title: "Оклейка витрин Air Astana" },
         { image: largeformatMakro, title: "Брендирование интерьера Makro" },
         { image: largeformatYandex, title: "Уличные флаги Yandex Lavka" },
-        { image: durableAfter, title: "Баннерная продукция" },
-        { image: unomomentoAfter, title: "Рекламные постеры" },
-        { image: bloomAfter, title: "Печать на пленке" },
       ],
     },
   ];
