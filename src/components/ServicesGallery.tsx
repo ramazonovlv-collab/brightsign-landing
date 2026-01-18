@@ -59,6 +59,8 @@ import exhibitionAlubest from "@/assets/gallery/exhibition-alubest.jpg";
 import exhibitionChangan from "@/assets/gallery/exhibition-changan.jpg";
 import exhibitionOmega from "@/assets/gallery/exhibition-omega.jpg";
 import exhibitionAlubestBooth from "@/assets/gallery/exhibition-alubest-booth.jpg";
+import exhibitionYtong1 from "@/assets/gallery/exhibition-ytong-1.jpg";
+import exhibitionYtong2 from "@/assets/gallery/exhibition-ytong-2.jpg";
 
 interface ServiceCategory {
   id: string;
@@ -107,6 +109,8 @@ const ServicesGallery = () => {
         { image: exhibitionChangan, title: "Автомобильный стенд Changan" },
         { image: exhibitionOmega, title: "Выставочный стенд Омега" },
         { image: exhibitionAlubestBooth, title: "Интерактивная будка Alubest" },
+        { image: exhibitionYtong1, title: "Выставочный стенд YTONG" },
+        { image: exhibitionYtong2, title: "Объёмные буквы YTONG" },
       ],
     },
     {
