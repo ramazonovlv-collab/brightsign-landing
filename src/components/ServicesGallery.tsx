@@ -62,6 +62,16 @@ import exhibitionAlubestBooth from "@/assets/gallery/exhibition-alubest-booth.jp
 import exhibitionYtong1 from "@/assets/gallery/exhibition-ytong-1.jpg";
 import exhibitionYtong2 from "@/assets/gallery/exhibition-ytong-2.jpg";
 
+// Import large format printing images
+import largeformatManana from "@/assets/gallery/largeformat-manana.jpg";
+import largeformatSungroup from "@/assets/gallery/largeformat-sungroup.jpg";
+import largeformatPepsi from "@/assets/gallery/largeformat-pepsi.jpg";
+import largeformatBlackstar from "@/assets/gallery/largeformat-blackstar.jpg";
+import largeformatTherose from "@/assets/gallery/largeformat-therose.jpg";
+import largeformatAirastana from "@/assets/gallery/largeformat-airastana.jpg";
+import largeformatMakro from "@/assets/gallery/largeformat-makro.jpg";
+import largeformatYandex from "@/assets/gallery/largeformat-yandex.jpg";
+
 interface ServiceCategory {
   id: string;
   titleKey: string;
@@ -152,6 +162,14 @@ const ServicesGallery = () => {
       image: printingImg,
       works: [
         { image: printingImg, title: "Широкоформатная печать" },
+        { image: largeformatManana, title: "Оклейка витрин ресторана Manana" },
+        { image: largeformatSungroup, title: "Рекламный баннер Sun Group" },
+        { image: largeformatPepsi, title: "Крышная установка Pepsi" },
+        { image: largeformatBlackstar, title: "Брендирование авто Black Star" },
+        { image: largeformatTherose, title: "Брендирование авто The Rose" },
+        { image: largeformatAirastana, title: "Оклейка витрин Air Astana" },
+        { image: largeformatMakro, title: "Брендирование интерьера Makro" },
+        { image: largeformatYandex, title: "Уличные флаги Yandex Lavka" },
         { image: durableAfter, title: "Баннерная продукция" },
         { image: unomomentoAfter, title: "Рекламные постеры" },
         { image: bloomAfter, title: "Печать на пленке" },
