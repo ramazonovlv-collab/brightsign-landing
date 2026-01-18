@@ -29,6 +29,7 @@ import lightboxBloom from "@/assets/gallery/lightbox-bloom.jpg";
 import lightboxLv from "@/assets/gallery/lightbox-lv.jpg";
 import lightboxKaganat from "@/assets/gallery/lightbox-kaganat.jpg";
 import lightboxLoccitane from "@/assets/gallery/lightbox-loccitane.jpg";
+import lightboxKaspiyka from "@/assets/gallery/lightbox-kaspiyka.jpg";
 import printingImg from "@/assets/gallery/large-format-printing.jpg";
 
 // Import portfolio images for gallery works
@@ -149,7 +150,7 @@ const ServicesGallery = () => {
         { image: lightboxEdison1, title: "Световая вывеска Edison" },
         { image: lightboxEdison2, title: "Edison - фасад" },
         { image: lightboxGalmart2, title: "Galmart - колосья" },
-        { image: lightboxDafna, title: "DAFNA - мебельный салон" },
+        { image: lightboxKaspiyka, title: "Каспийка Fish Restaurant" },
         { image: lightboxMessika, title: "MESSIKA Paris" },
         { image: lightboxBloom, title: "Bloom Beauty Shop" },
         { image: lightboxLv, title: "Объёмные буквы LV" },
