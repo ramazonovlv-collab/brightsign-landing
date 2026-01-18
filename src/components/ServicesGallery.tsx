@@ -61,6 +61,7 @@ import exhibitionOmega from "@/assets/gallery/exhibition-omega.jpg";
 import exhibitionAlubestBooth from "@/assets/gallery/exhibition-alubest-booth.jpg";
 import exhibitionYtong1 from "@/assets/gallery/exhibition-ytong-1.jpg";
 import exhibitionYtong2 from "@/assets/gallery/exhibition-ytong-2.jpg";
+import exhibitionDurableMain from "@/assets/gallery/exhibition-durable-main.jpg";
 
 // Import large format printing images
 import largeformatManana from "@/assets/gallery/largeformat-manana.jpg";
@@ -109,7 +110,7 @@ const ServicesGallery = () => {
     {
       id: "exhibition",
       titleKey: "gallery.exhibition",
-      image: exhibitionStandMain,
+      image: exhibitionDurableMain,
       works: [
         { image: exhibitionDulon, title: "Выставочный стенд Durable Group" },
         { image: exhibitionDafnaChristmas, title: "Новогодняя инсталляция Dafna" },
