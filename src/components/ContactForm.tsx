@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2, RefreshCw } from "lucide-react";
 
 const formSchema = z.object({
   name: z
@@ -35,12 +35,40 @@ const formSchema = z.object({
     .trim()
     .max(1000, { message: "Сообщение не должно превышать 1000 символов" })
     .optional(),
+  captcha: z.string().min(1, { message: "Введите ответ" }),
 });
 
 type FormData = z.infer<typeof formSchema>;
 
+interface CaptchaQuestion {
+  question: string;
+  answer: number;
+}
+
+const generateCaptcha = (): CaptchaQuestion => {
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  const operations = [
+    { symbol: "+", calc: (a: number, b: number) => a + b },
+    { symbol: "-", calc: (a: number, b: number) => a - b },
+  ];
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+  
+  // Ensure positive result for subtraction
+  const [a, b] = operation.symbol === "-" && num1 < num2 
+    ? [num2, num1] 
+    : [num1, num2];
+  
+  return {
+    question: `${a} ${operation.symbol} ${b} = ?`,
+    answer: operation.calc(a, b),
+  };
+};
+
 export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captcha, setCaptcha] = useState<CaptchaQuestion>(generateCaptcha);
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
   const { toast } = useToast();
   const { language } = useLanguage();
 
@@ -50,10 +78,28 @@ export const ContactForm = () => {
       name: "",
       phone: "",
       message: "",
+      captcha: "",
     },
   });
 
+  const refreshCaptcha = useCallback(() => {
+    setCaptcha(generateCaptcha());
+    form.setValue("captcha", "");
+    setCaptchaError(null);
+  }, [form]);
+
   const onSubmit = async (data: FormData) => {
+    // Validate captcha
+    const userAnswer = parseInt(data.captcha, 10);
+    if (isNaN(userAnswer) || userAnswer !== captcha.answer) {
+      setCaptchaError(
+        language === "ru" ? "Неверный ответ. Попробуйте ещё раз" : "Wrong answer. Try again"
+      );
+      refreshCaptcha();
+      return;
+    }
+
+    setCaptchaError(null);
     setIsSubmitting(true);
 
     try {
@@ -81,6 +127,7 @@ export const ContactForm = () => {
       });
 
       form.reset();
+      refreshCaptcha();
     } catch (error: any) {
       console.error("Error sending form:", error);
       toast({
@@ -159,6 +206,47 @@ export const ContactForm = () => {
                 />
               </FormControl>
               <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Captcha Field */}
+        <FormField
+          control={form.control}
+          name="captcha"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-foreground">
+                {language === "ru" ? "Проверка" : "Verification"} *
+              </FormLabel>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-md border border-border font-mono text-lg select-none">
+                  {captcha.question}
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  onClick={refreshCaptcha}
+                  className="shrink-0"
+                  title={language === "ru" ? "Обновить" : "Refresh"}
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </Button>
+              </div>
+              <FormControl>
+                <Input
+                  placeholder={language === "ru" ? "Ваш ответ" : "Your answer"}
+                  className="bg-background border-border mt-2"
+                  type="number"
+                  inputMode="numeric"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+              {captchaError && (
+                <p className="text-sm font-medium text-destructive">{captchaError}</p>
+              )}
             </FormItem>
           )}
         />
