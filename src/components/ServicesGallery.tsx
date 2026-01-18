@@ -83,9 +83,9 @@ const ServicesGallery = () => {
       titleKey: "gallery.volumetric",
       image: volumetricGrapes,
       works: [
-        { image: volumetricTeapot, title: "Подвесная инсталляция чайник" },
-        { image: volumetricBird, title: "Объёмная скульптура птица" },
-        { image: volumetricKfcBucket, title: "Объёмная инсталляция KFC" },
+        { image: volumetricTeapot, title: "Подвесная инсталляция чайник Galmart" },
+        { image: volumetricBird, title: "Объёмная скульптура птицы Galmart" },
+        { image: volumetricKfcBucket, title: "Пекарня NON ХЛЕБ Galmart" },
         { image: volumetricPlants1, title: "Подвесные островки с растениями" },
         { image: volumetricJungle, title: "Декоративные джунгли в ТЦ" },
         { image: volumetricPlants2, title: "Парящие деревья" },
