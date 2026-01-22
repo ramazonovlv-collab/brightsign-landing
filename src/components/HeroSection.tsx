@@ -97,6 +97,12 @@ const HeroSection = () => {
             size="lg" 
             className="text-lg px-8 py-6 mb-10 animate-fade-in shadow-glow hover:shadow-glow-hover transition-shadow"
             style={{ animationDelay: '0.2s' }}
+            onClick={() => {
+              const element = document.getElementById('contacts');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             {t('hero.cta')}
           </Button>
