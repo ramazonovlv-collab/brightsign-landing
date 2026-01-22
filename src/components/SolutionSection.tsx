@@ -1,4 +1,4 @@
-import { Ruler, Palette, Settings, Wrench, ArrowRight } from 'lucide-react';
+import { Ruler, Palette, Settings, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import productionImage from '@/assets/production-workshop.jpg';
 import sectionBg from '@/assets/bg/section-light.jpg';
@@ -87,9 +87,6 @@ const SolutionSection = () => {
                     {step.description}
                   </p>
                 </div>
-
-                {/* Arrow */}
-                <ArrowRight className="w-5 h-5 text-muted-foreground/0 group-hover:text-primary transition-all mt-4 group-hover:translate-x-1" />
               </div>
             ))}
             </div>
