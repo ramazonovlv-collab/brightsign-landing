@@ -1,4 +1,4 @@
-import { Award, Clock, Gem, Heart } from 'lucide-react';
+import { Award, Clock, Gem, Heart, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollAnimation from './ScrollAnimation';
 import sectionDarkBg from '@/assets/bg/section-dark.jpg';
@@ -37,6 +37,25 @@ const BenefitsSection = () => {
     },
   ];
 
+  const serviceLinks = [
+    { id: 'volumetric', labelKey: 'gallery.volumetric' },
+    { id: 'exhibition', labelKey: 'gallery.exhibition' },
+    { id: 'interior', labelKey: 'gallery.interior' },
+    { id: 'lightbox', labelKey: 'gallery.lightbox' },
+    { id: 'printing', labelKey: 'gallery.printing' },
+  ];
+
+  const scrollToService = (serviceId: string) => {
+    const gallerySection = document.getElementById('services-gallery');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+      // Dispatch custom event to set active category
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('setServiceCategory', { detail: serviceId }));
+      }, 500);
+    }
+  };
+
   return (
     <section id="benefits" className="relative py-20 md:py-28 overflow-hidden">
       {/* Background */}
@@ -74,6 +93,25 @@ const BenefitsSection = () => {
             </ScrollAnimation>
           ))}
         </div>
+
+        {/* Service Links */}
+        <ScrollAnimation delay={0.4}>
+          <div className="mt-16 text-center">
+            <p className="text-muted-foreground mb-6">{t('benefits.servicesLabel')}</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {serviceLinks.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => scrollToService(service.id)}
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+                >
+                  {t(service.labelKey)}
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

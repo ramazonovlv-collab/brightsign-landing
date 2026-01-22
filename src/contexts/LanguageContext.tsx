@@ -66,6 +66,7 @@ const translations: Record<Language, Record<string, string>> = {
     'benefits.card3.desc': 'Используем высококачественные материалы',
     'benefits.card4.title': 'Лояльность',
     'benefits.card4.desc': 'Предлагаем лояльную цену, ниже рынка',
+    'benefits.servicesLabel': 'Наши направления:',
     
     // Portfolio
     'portfolio.title': 'Посмотрите на наши работы в Ташкенте',
@@ -208,6 +209,7 @@ const translations: Record<Language, Record<string, string>> = {
     'benefits.card3.desc': 'Yuqori sifatli materiallardan foydalanamiz',
     'benefits.card4.title': 'Sodiqlik',
     'benefits.card4.desc': 'Bozordan past, sodiq narx taklif qilamiz',
+    'benefits.servicesLabel': 'Bizning yo\'nalishlarimiz:',
     
     // Portfolio
     'portfolio.title': 'Toshkentdagi ishlarimizni ko\'ring',
