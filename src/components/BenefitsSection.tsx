@@ -76,14 +76,14 @@ const BenefitsSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <ScrollAnimation key={index} delay={index * 0.1}>
-              <div className="group bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full">
+              <div className="group bg-card rounded-2xl p-6 border border-border hover-card-glow h-full">
                 {/* Icon with gradient background */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                  <benefit.icon className={`w-7 h-7 ${benefit.iconColor}`} />
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <benefit.icon className={`w-7 h-7 ${benefit.iconColor} group-hover:scale-110 transition-transform`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -103,10 +103,10 @@ const BenefitsSection = () => {
                 <button
                   key={service.id}
                   onClick={() => scrollToService(service.id)}
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover-gradient-border hover:shadow-md transition-all duration-300"
                 >
                   {t(service.labelKey)}
-                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1.5 transition-all duration-300" />
                 </button>
               ))}
             </div>
