@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
@@ -203,8 +203,20 @@ const ServicesGallery = () => {
     );
   };
 
+  // Listen for category change events from other sections
+  useEffect(() => {
+    const handleSetCategory = (event: CustomEvent<string>) => {
+      setActiveCategory(event.detail);
+    };
+    
+    window.addEventListener('setServiceCategory', handleSetCategory as EventListener);
+    return () => {
+      window.removeEventListener('setServiceCategory', handleSetCategory as EventListener);
+    };
+  }, []);
+
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section id="services-gallery" className="relative py-16 md:py-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img src={sectionDarkBg} alt="" className="w-full h-full object-cover opacity-60" />
