@@ -347,9 +347,9 @@ const ServicesGallery = () => {
                     {/* View Gallery Button */}
                     <button
                       onClick={() => activeService && openGallery(activeService.works)}
-                      className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
+                      className="group inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                     >
-                      <Images className="w-5 h-5" />
+                      <Images className="w-5 h-5 group-hover:scale-110 transition-transform" />
                       {t("gallery.viewWorks")}
                     </button>
                   </div>
@@ -367,10 +367,10 @@ const ServicesGallery = () => {
               <motion.button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 className={`
-                  relative overflow-hidden rounded-xl aspect-[4/3] group
+                  relative overflow-hidden rounded-xl aspect-[4/3] group shadow-md hover:shadow-xl transition-shadow duration-300
                   ${activeCategory === category.id ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""}
                 `}
               >
@@ -379,14 +379,14 @@ const ServicesGallery = () => {
                   alt={t(category.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/70 group-hover:via-black/30 transition-all duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="text-white text-xs md:text-sm font-medium text-center line-clamp-2">
+                  <p className="text-white text-xs md:text-sm font-medium text-center line-clamp-2 group-hover:text-primary-foreground transition-colors">
                     {t(category.titleKey)}
                   </p>
                 </div>
                 {/* Works count badge */}
-                <div className="absolute top-2 right-2 bg-primary/90 text-primary-foreground text-xs px-2 py-1 rounded-full font-medium">
+                <div className="absolute top-2 right-2 bg-primary/90 text-primary-foreground text-xs px-2 py-1 rounded-full font-medium group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
                   {category.works.length}
                 </div>
                 {activeCategory === category.id && (

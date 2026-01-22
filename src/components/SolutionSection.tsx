@@ -62,28 +62,28 @@ const SolutionSection = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="group flex gap-4 p-4 rounded-2xl hover:bg-muted/50 transition-colors"
+                className="group flex gap-4 p-4 rounded-2xl hover:bg-muted/50 hover:shadow-lg transition-all duration-300 cursor-default"
               >
                 {/* Number & Icon */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <step.icon className="w-7 h-7 text-primary" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-105 transition-all duration-300">
+                    <step.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <span className="absolute -top-2 -left-2 w-6 h-6 bg-primary text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-2 -left-2 w-6 h-6 bg-primary text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
                     {step.number}
                   </span>
                   {/* Connector line */}
                   {index < steps.length - 1 && (
-                    <div className="absolute top-16 left-1/2 w-0.5 h-8 bg-border -translate-x-1/2" />
+                    <div className="absolute top-16 left-1/2 w-0.5 h-8 bg-border group-hover:bg-primary/30 -translate-x-1/2 transition-colors duration-300" />
                   )}
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pt-2">
-                  <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm group-hover:text-foreground/70 transition-colors duration-300">
                     {step.description}
                   </p>
                 </div>
@@ -94,8 +94,8 @@ const SolutionSection = () => {
 
           {/* Right - Image */}
           <ScrollAnimation direction="right" delay={0.2}>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative group">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl hover-zoom">
                 <img
                   src={productionImage}
                   alt="Производственный цех"
