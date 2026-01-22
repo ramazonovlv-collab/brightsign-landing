@@ -5,6 +5,25 @@ import kitLogo from '@/assets/kit-logo.png';
 const Footer = () => {
   const { t } = useLanguage();
 
+  const serviceLinks = [
+    { labelKey: 'footer.service1', categoryId: 'volumetric' },
+    { labelKey: 'footer.service2', categoryId: 'exhibition' },
+    { labelKey: 'footer.service3', categoryId: 'interior' },
+    { labelKey: 'footer.service4', categoryId: 'lightbox' },
+    { labelKey: 'footer.service5', categoryId: 'printing' },
+  ];
+
+  const scrollToService = (categoryId: string) => {
+    const gallerySection = document.getElementById('services-gallery');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+      // Dispatch custom event to set active category
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('setServiceCategory', { detail: categoryId }));
+      }, 500);
+    }
+  };
+
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto px-4">
@@ -29,11 +48,15 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4 text-background">{t('footer.services')}</h3>
             <ul className="space-y-2 text-background/70">
-              <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service1')}</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service2')}</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service3')}</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service4')}</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">{t('footer.service5')}</li>
+              {serviceLinks.map((service) => (
+                <li 
+                  key={service.categoryId}
+                  onClick={() => scrollToService(service.categoryId)}
+                  className="hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"
+                >
+                  {t(service.labelKey)}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -64,7 +87,7 @@ const Footer = () => {
                 href="https://www.instagram.com/kit___studio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background transition-colors"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background hover:scale-110 transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -72,7 +95,7 @@ const Footer = () => {
                 href="https://t.me/KIT_reklama" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background transition-colors"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background hover:scale-110 transition-all duration-300"
               >
                 <Send className="w-5 h-5" />
               </a>
