@@ -379,14 +379,16 @@ const ServicesGallery = () => {
                   alt={t(category.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/70 group-hover:via-black/30 transition-all duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="text-white text-xs md:text-sm font-medium text-center line-clamp-2 group-hover:text-primary-foreground transition-colors">
+                {/* Gradient only at bottom for text readability */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                {/* Text positioned at bottom-left */}
+                <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3">
+                  <p className="text-white text-[10px] md:text-sm font-medium text-left leading-tight line-clamp-2">
                     {t(category.titleKey)}
                   </p>
                 </div>
                 {/* Works count badge */}
-                <div className="absolute top-2 right-2 bg-primary/90 text-primary-foreground text-xs px-2 py-1 rounded-full font-medium group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
+                <div className="absolute top-2 right-2 bg-primary/90 text-primary-foreground text-[10px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-full font-medium group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
                   {category.works.length}
                 </div>
                 {activeCategory === category.id && (
