@@ -23,26 +23,26 @@ const AnimatedStat = ({
   return (
     <div
       ref={ref}
-      className="bg-card/80 backdrop-blur-sm px-4 py-4 rounded-xl border border-border text-center"
+      className="bg-card/80 backdrop-blur-sm px-3 py-3 md:px-4 md:py-4 rounded-xl border border-border text-center"
     >
-      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-        <Icon className="w-5 h-5 text-primary" />
+      <div className="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-1.5 md:mb-2">
+        <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
       </div>
-      <div className="text-2xl md:text-3xl font-bold text-foreground">
+      <div className="text-xl md:text-3xl font-bold text-foreground">
         {formatNumber(count)}
-        {suffix && <span className="text-lg align-super">{suffix}</span>}
+        {suffix && <span className="text-sm md:text-lg align-super">{suffix}</span>}
       </div>
-      <p className="text-xs text-muted-foreground mt-1">{label}</p>
+      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 md:mt-1 leading-tight">{label}</p>
     </div>
   );
 };
 
 const TextStat = ({ icon: Icon, label }: { icon: React.ElementType; label: string }) => (
-  <div className="bg-card/80 backdrop-blur-sm px-4 py-4 rounded-xl border border-border text-center">
-    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-      <Icon className="w-5 h-5 text-primary" />
+  <div className="bg-card/80 backdrop-blur-sm px-3 py-3 md:px-4 md:py-4 rounded-xl border border-border text-center">
+    <div className="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-1.5 md:mb-2">
+      <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
     </div>
-    <div className="text-sm md:text-base font-semibold text-foreground leading-tight">
+    <div className="text-xs md:text-base font-semibold text-foreground leading-tight">
       {label}
     </div>
   </div>
@@ -79,15 +79,15 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl">
           {/* Main Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 animate-fade-in">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-3 md:mb-4 animate-fade-in">
             {t('hero.title')}
-            <span className="text-primary block mt-2">
+            <span className="text-primary block mt-1 md:mt-2">
               {t('hero.titleHighlight')}
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             {t('hero.subtitle')}
           </p>
 
@@ -95,7 +95,7 @@ const HeroSection = () => {
           <Button 
             variant="cta" 
             size="lg" 
-            className="text-lg px-8 py-6 mb-10 animate-fade-in shadow-glow hover:shadow-glow-hover transition-shadow"
+            className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 mb-8 md:mb-10 animate-fade-in shadow-glow hover:shadow-glow-hover transition-shadow"
             style={{ animationDelay: '0.2s' }}
             onClick={() => {
               const element = document.getElementById('contacts');
@@ -108,7 +108,7 @@ const HeroSection = () => {
           </Button>
 
           {/* Company Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <AnimatedStat 
               icon={Signpost} 
               endValue={11372} 

@@ -57,7 +57,7 @@ const BenefitsSection = () => {
   };
 
   return (
-    <section id="benefits" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="benefits" className="relative py-12 md:py-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img src={sectionDarkBg} alt="" className="w-full h-full object-cover opacity-50" />
@@ -67,26 +67,26 @@ const BenefitsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Title */}
         <ScrollAnimation>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-8 md:mb-16">
             {t('benefits.title')}
           </h2>
         </ScrollAnimation>
 
         {/* Benefits Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {benefits.map((benefit, index) => (
             <ScrollAnimation key={index} delay={index * 0.1}>
-              <div className="group bg-card rounded-2xl p-6 border border-border hover-card-glow h-full">
+              <div className="group bg-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-border hover-card-glow h-full">
                 {/* Icon with gradient background */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                  <benefit.icon className={`w-7 h-7 ${benefit.iconColor} group-hover:scale-110 transition-transform`} />
+                <div className={`w-10 h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mb-3 md:mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <benefit.icon className={`w-5 h-5 md:w-7 md:h-7 ${benefit.iconColor} group-hover:scale-110 transition-transform`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-sm md:text-lg font-bold text-foreground mb-1 md:mb-2 group-hover:text-primary transition-colors">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -96,17 +96,17 @@ const BenefitsSection = () => {
 
         {/* Service Links */}
         <ScrollAnimation delay={0.4}>
-          <div className="mt-16 text-center">
-            <p className="text-muted-foreground mb-6">{t('benefits.servicesLabel')}</p>
-            <div className="flex flex-wrap justify-center gap-3">
+          <div className="mt-10 md:mt-16 text-center">
+            <p className="text-muted-foreground text-sm md:text-base mb-4 md:mb-6">{t('benefits.servicesLabel')}</p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
               {serviceLinks.map((service) => (
                 <button
                   key={service.id}
                   onClick={() => scrollToService(service.id)}
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover-gradient-border hover:shadow-md transition-all duration-300"
+                  className="group inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-5 py-2 md:py-2.5 bg-card border border-border rounded-full text-xs md:text-sm font-medium text-foreground hover-gradient-border hover:shadow-md transition-all duration-300"
                 >
                   {t(service.labelKey)}
-                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1.5 transition-all duration-300" />
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1.5 transition-all duration-300" />
                 </button>
               ))}
             </div>
