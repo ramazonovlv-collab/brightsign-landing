@@ -91,7 +91,7 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section id="portfolio" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="portfolio" className="relative py-12 md:py-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img src={sectionLightBg} alt="" className="w-full h-full object-cover opacity-20" />
@@ -101,18 +101,18 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Title */}
         <ScrollAnimation>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-6">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-4 md:mb-6">
             {t("portfolio.title")}
           </h2>
         </ScrollAnimation>
 
         {/* Stats */}
         <ScrollAnimation delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-16 mb-8 md:mb-16">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</p>
-                <p className="text-muted-foreground text-sm">{stat.label}</p>
+                <p className="text-2xl md:text-4xl font-bold text-primary mb-0.5 md:mb-1">{stat.value}</p>
+                <p className="text-muted-foreground text-xs md:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -120,26 +120,26 @@ const PortfolioSection = () => {
 
         {/* Slider */}
         <ScrollAnimation delay={0.2}>
-          <div className="relative max-w-5xl mx-auto">
+          <div className="relative max-w-5xl mx-auto px-8 md:px-0">
             {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors shadow-lg md:-translate-x-12"
           >
-            <ChevronLeft className="w-6 h-6 text-foreground" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors shadow-lg md:translate-x-12"
           >
-            <ChevronRight className="w-6 h-6 text-foreground" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
           </button>
 
           {/* Slide Content */}
-          <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-xl">
+          <div className="bg-card rounded-2xl md:rounded-3xl border border-border overflow-hidden shadow-xl">
             <div className="grid md:grid-cols-2">
               {/* Images */}
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[4/3] md:aspect-[4/3]">
                 {projects[currentIndex].singleImage ? (
                   /* Single image mode - full width */
                   <img
@@ -189,35 +189,35 @@ const PortfolioSection = () => {
               </div>
 
               {/* Project Info */}
-              <div className="p-6 md:p-8 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-foreground mb-4">{projects[currentIndex].title}</h3>
+              <div className="p-4 md:p-8 flex flex-col justify-center">
+                <h3 className="text-lg md:text-2xl font-bold text-foreground mb-2 md:mb-4">{projects[currentIndex].title}</h3>
 
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">
+                <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <Calendar className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm md:text-base">
                       {projects[currentIndex].days} {t("portfolio.days")}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Building className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">{projects[currentIndex].task}</span>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <Building className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm md:text-base">{projects[currentIndex].task}</span>
                   </div>
                   {projects[currentIndex].result && (
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-foreground font-medium">{projects[currentIndex].result}</span>
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-foreground font-medium text-sm md:text-base">{projects[currentIndex].result}</span>
                     </div>
                   )}
                 </div>
 
                 {/* Dots */}
-                <div className="flex gap-2">
+                <div className="flex gap-1.5 md:gap-2">
                   {projects.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentIndex(index)}
-                      className={`w-3 h-3 rounded-full transition-colors ${
+                      className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-colors ${
                         index === currentIndex ? "bg-primary" : "bg-border hover:bg-muted-foreground/30"
                       }`}
                     />
