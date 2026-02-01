@@ -71,7 +71,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio
     'portfolio.title': 'Посмотрите на наши работы в Ташкенте',
     'portfolio.stat1': '500+ объектов',
-    'portfolio.stat2': '11 лет опыта',
+    'portfolio.stat2': '15 лет опыта',
     'portfolio.stat3': '3500 м² вывесок',
     'portfolio.stat1.label': 'установлено',
     'portfolio.stat2.label': 'на рынке',
@@ -151,7 +151,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.service4': 'Световые короба',
     'footer.service5': 'Широкоформатная печать',
     'footer.contacts': 'Контакты',
-    'footer.copyright': '© 2026 KIT. Все права защищены.',
+    'footer.copyright': '© 2011 KIT. Все права защищены.',
   },
   uz: {
     // Navigation
@@ -214,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio
     'portfolio.title': 'Toshkentdagi ishlarimizni ko\'ring',
     'portfolio.stat1': '500+ obyekt',
-    'portfolio.stat2': '11 yil tajriba',
+    'portfolio.stat2': '15 yil tajriba',
     'portfolio.stat3': '3500 m² belgilar',
     'portfolio.stat1.label': 'o\'rnatildi',
     'portfolio.stat2.label': 'bozorda',
@@ -294,7 +294,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.service4': 'Yorug\'lik qutilari',
     'footer.service5': 'Keng formatli bosma',
     'footer.contacts': 'Kontaktlar',
-    'footer.copyright': '© 2026 KIT. Barcha huquqlar himoyalangan.',
+    'footer.copyright': '© 2011 KIT. Barcha huquqlar himoyalangan.',
   }
 };
 
