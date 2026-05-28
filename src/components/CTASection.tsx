@@ -177,6 +177,9 @@ const CTASection = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   className="pl-10 md:pl-12 min-h-[80px] md:min-h-[100px] text-base md:text-lg resize-none"
                 />
+              </div>
+            </div>
+
             {/* Captcha */}
             <div className="text-left mb-4 md:mb-6">
               <div className="flex items-center gap-2 md:gap-3 flex-wrap">
@@ -205,10 +208,6 @@ const CTASection = () => {
               {errors.captcha && (
                 <p className="text-destructive text-xs md:text-sm mt-1">{errors.captcha}</p>
               )}
-            </div>
-
-            {/* Submit Button */}
-
             </div>
 
             {/* Submit Button */}
