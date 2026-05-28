@@ -38,7 +38,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Validate phone format (basic validation)
     const phoneRegex = /^[\d\s\-\+\(\)]{10,20}$/;
     if (!phoneRegex.test(phone)) {
-      console.error("Invalid phone format:", phone);
+    const phoneRegex = /^[\d\s\-\+\(\)]{7,20}$/;
       return new Response(
         JSON.stringify({ error: "Неверный формат телефона" }),
         {
