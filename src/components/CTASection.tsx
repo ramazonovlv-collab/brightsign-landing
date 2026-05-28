@@ -95,6 +95,8 @@ const CTASection = () => {
       setPhone('');
       setMessage('');
       setErrors({});
+      refreshCaptcha();
+
     } catch (error) {
       console.error('Error sending form:', error);
       toast({
