@@ -44,21 +44,29 @@ const CTASection = () => {
 
 
   const validateForm = () => {
-    const newErrors: { name?: string; phone?: string } = {};
+    const newErrors: { name?: string; phone?: string; captcha?: string } = {};
     
     if (!name.trim() || name.trim().length < 2) {
-      newErrors.name = 'Введите ваше имя';
+      newErrors.name = language === 'ru' ? 'Введите ваше имя' : 'Ismingizni kiriting';
     }
     
     const phoneRegex = /^\+?[0-9]{9,15}$/;
     if (!phone.trim()) {
-      newErrors.phone = 'Введите номер телефона';
+      newErrors.phone = language === 'ru' ? 'Введите номер телефона' : 'Telefon raqamini kiriting';
     } else if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'Неверный формат телефона';
+      newErrors.phone = language === 'ru' ? 'Неверный формат телефона' : "Telefon formati noto'g'ri";
+    }
+
+    const userAnswer = parseInt(captchaAnswer, 10);
+    if (isNaN(userAnswer) || userAnswer !== captcha.answer) {
+      newErrors.captcha = language === 'ru' ? 'Неверный ответ' : "Noto'g'ri javob";
     }
     
     setErrors(newErrors);
+    if (newErrors.captcha) refreshCaptcha();
     return Object.keys(newErrors).length === 0;
+  };
+
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
