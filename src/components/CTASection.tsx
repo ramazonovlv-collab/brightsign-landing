@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Phone, User, MessageSquare, Loader2 } from 'lucide-react';
+import { useState, useCallback } from 'react';
+import { Phone, User, MessageSquare, Loader2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,32 +9,65 @@ import { supabase } from '@/integrations/supabase/client';
 import ScrollAnimation from './ScrollAnimation';
 import ctaBg from '@/assets/bg/cta-bg.jpg';
 
+interface CaptchaQuestion {
+  question: string;
+  answer: number;
+}
+
+const generateCaptcha = (): CaptchaQuestion => {
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  const ops = [
+    { s: '+', f: (a: number, b: number) => a + b },
+    { s: '-', f: (a: number, b: number) => a - b },
+  ];
+  const op = ops[Math.floor(Math.random() * ops.length)];
+  const [a, b] = op.s === '-' && num1 < num2 ? [num2, num1] : [num1, num2];
+  return { question: `${a} ${op.s} ${b} = ?`, answer: op.f(a, b) };
+};
+
 const CTASection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captcha, setCaptcha] = useState<CaptchaQuestion>(generateCaptcha);
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; captcha?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const refreshCaptcha = useCallback(() => {
+    setCaptcha(generateCaptcha());
+    setCaptchaAnswer('');
+  }, []);
+
+
   const validateForm = () => {
-    const newErrors: { name?: string; phone?: string } = {};
+    const newErrors: { name?: string; phone?: string; captcha?: string } = {};
     
     if (!name.trim() || name.trim().length < 2) {
-      newErrors.name = 'Введите ваше имя';
+      newErrors.name = language === 'ru' ? 'Введите ваше имя' : 'Ismingizni kiriting';
     }
     
     const phoneRegex = /^\+?[0-9]{9,15}$/;
     if (!phone.trim()) {
-      newErrors.phone = 'Введите номер телефона';
+      newErrors.phone = language === 'ru' ? 'Введите номер телефона' : 'Telefon raqamini kiriting';
     } else if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'Неверный формат телефона';
+      newErrors.phone = language === 'ru' ? 'Неверный формат телефона' : "Telefon formati noto'g'ri";
+    }
+
+    const userAnswer = parseInt(captchaAnswer, 10);
+    if (isNaN(userAnswer) || userAnswer !== captcha.answer) {
+      newErrors.captcha = language === 'ru' ? 'Неверный ответ' : "Noto'g'ri javob";
     }
     
     setErrors(newErrors);
+    if (newErrors.captcha) refreshCaptcha();
     return Object.keys(newErrors).length === 0;
   };
+
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,6 +95,8 @@ const CTASection = () => {
       setPhone('');
       setMessage('');
       setErrors({});
+      refreshCaptcha();
+
     } catch (error) {
       console.error('Error sending form:', error);
       toast({
@@ -143,6 +178,36 @@ const CTASection = () => {
                   className="pl-10 md:pl-12 min-h-[80px] md:min-h-[100px] text-base md:text-lg resize-none"
                 />
               </div>
+            </div>
+
+            {/* Captcha */}
+            <div className="text-left mb-4 md:mb-6">
+              <div className="flex items-center gap-2 md:gap-3 flex-wrap">
+                <div className="flex items-center px-3 md:px-4 h-12 md:h-14 bg-muted rounded-md border border-border font-mono text-base md:text-lg select-none">
+                  {captcha.question}
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  onClick={refreshCaptcha}
+                  className="shrink-0 h-12 md:h-14 w-12 md:w-14"
+                  title={language === 'ru' ? 'Обновить' : 'Yangilash'}
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </Button>
+                <Input
+                  type="number"
+                  inputMode="numeric"
+                  placeholder={language === 'ru' ? 'Ваш ответ' : 'Javobingiz'}
+                  value={captchaAnswer}
+                  onChange={(e) => setCaptchaAnswer(e.target.value)}
+                  className={`flex-1 min-w-[120px] h-12 md:h-14 text-base md:text-lg ${errors.captcha ? 'border-destructive' : ''}`}
+                />
+              </div>
+              {errors.captcha && (
+                <p className="text-destructive text-xs md:text-sm mt-1">{errors.captcha}</p>
+              )}
             </div>
 
             {/* Submit Button */}
