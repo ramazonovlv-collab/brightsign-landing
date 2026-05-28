@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Phone, User, MessageSquare, Loader2 } from 'lucide-react';
+import { useState, useCallback } from 'react';
+import { Phone, User, MessageSquare, Loader2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,14 +9,39 @@ import { supabase } from '@/integrations/supabase/client';
 import ScrollAnimation from './ScrollAnimation';
 import ctaBg from '@/assets/bg/cta-bg.jpg';
 
+interface CaptchaQuestion {
+  question: string;
+  answer: number;
+}
+
+const generateCaptcha = (): CaptchaQuestion => {
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  const ops = [
+    { s: '+', f: (a: number, b: number) => a + b },
+    { s: '-', f: (a: number, b: number) => a - b },
+  ];
+  const op = ops[Math.floor(Math.random() * ops.length)];
+  const [a, b] = op.s === '-' && num1 < num2 ? [num2, num1] : [num1, num2];
+  return { question: `${a} ${op.s} ${b} = ?`, answer: op.f(a, b) };
+};
+
 const CTASection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captcha, setCaptcha] = useState<CaptchaQuestion>(generateCaptcha);
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; captcha?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const refreshCaptcha = useCallback(() => {
+    setCaptcha(generateCaptcha());
+    setCaptchaAnswer('');
+  }, []);
+
 
   const validateForm = () => {
     const newErrors: { name?: string; phone?: string } = {};
