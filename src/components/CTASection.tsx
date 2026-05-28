@@ -67,7 +67,7 @@ const CTASection = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
