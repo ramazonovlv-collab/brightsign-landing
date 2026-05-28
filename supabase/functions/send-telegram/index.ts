@@ -36,9 +36,9 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Validate phone format (basic validation)
-    const phoneRegex = /^[\d\s\-\+\(\)]{10,20}$/;
-    if (!phoneRegex.test(phone)) {
+    const normalizedPhone = phone.trim();
     const phoneRegex = /^[\d\s\-\+\(\)]{7,20}$/;
+    if (!phoneRegex.test(normalizedPhone)) {
       return new Response(
         JSON.stringify({ error: "Неверный формат телефона" }),
         {
@@ -50,7 +50,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Sanitize inputs
     const sanitizedName = name.trim().slice(0, 100);
-    const sanitizedPhone = phone.trim().slice(0, 20);
+    const sanitizedPhone = normalizedPhone.slice(0, 20);
     const sanitizedMessage = message?.trim().slice(0, 1000) || "Не указано";
 
     const telegramMessage = `
