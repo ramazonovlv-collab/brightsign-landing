@@ -177,7 +177,38 @@ const CTASection = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   className="pl-10 md:pl-12 min-h-[80px] md:min-h-[100px] text-base md:text-lg resize-none"
                 />
+            {/* Captcha */}
+            <div className="text-left mb-4 md:mb-6">
+              <div className="flex items-center gap-2 md:gap-3 flex-wrap">
+                <div className="flex items-center px-3 md:px-4 h-12 md:h-14 bg-muted rounded-md border border-border font-mono text-base md:text-lg select-none">
+                  {captcha.question}
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  onClick={refreshCaptcha}
+                  className="shrink-0 h-12 md:h-14 w-12 md:w-14"
+                  title={language === 'ru' ? 'Обновить' : 'Yangilash'}
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </Button>
+                <Input
+                  type="number"
+                  inputMode="numeric"
+                  placeholder={language === 'ru' ? 'Ваш ответ' : 'Javobingiz'}
+                  value={captchaAnswer}
+                  onChange={(e) => setCaptchaAnswer(e.target.value)}
+                  className={`flex-1 min-w-[120px] h-12 md:h-14 text-base md:text-lg ${errors.captcha ? 'border-destructive' : ''}`}
+                />
               </div>
+              {errors.captcha && (
+                <p className="text-destructive text-xs md:text-sm mt-1">{errors.captcha}</p>
+              )}
+            </div>
+
+            {/* Submit Button */}
+
             </div>
 
             {/* Submit Button */}
